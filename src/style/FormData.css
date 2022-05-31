@@ -1,0 +1,51 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.form fieldset {
+  width: 100%;
+  margin: 0;
+  padding: 0 1rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form p {
+  font-size: .9rem;
+}
+
+.form fieldset input[type=text],
+.form fieldset input[type=url],
+.form fieldset textarea {
+  width: 100%;
+  margin: auto;
+  background-color: transparent;
+  border: none;
+  color: var(--letter-color);
+  font-size: .9rem;
+}
+
+.form .data-container,
+.form .social-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.form .edit-button {
+  width: 100%;
+  padding: .5rem 1rem;
+  margin-top: 1rem;
+  border: none;
+  background-color: var(--active-button);
+  color: var(--letter-color);
+  font-weight: bolder;
+  font-size: 1rem;
+  border-radius: 5px;
+}

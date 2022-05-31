@@ -1,0 +1,96 @@
+.header-full-desktop {
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 200px;
+  background-color: var(--secondary-color);
+  padding: 1rem 0 1rem 0;
+  box-sizing: border-box;
+  gap: 2rem;
+}
+
+.header-full-desktop .logo-container {
+  padding-left: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.header-full-desktop .logo-container img.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.header-full-desktop .logo-container .text-logo {
+  width: 80px;
+}
+
+.header-full-desktop menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.3rem;
+}
+
+.header-full-desktop menu .item-menu {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding-left: .5rem;
+}
+
+.header-full-desktop menu .item-practice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  border-top: 2px solid var(--line-color);
+  padding: 1rem 0 0 .5rem;
+}
+
+.header-full-desktop menu .item-practice div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-full-desktop menu .item-practice div svg:last-child {
+  font-size: 1rem;
+  align-self: flex-end;
+}
+
+
+.header-full-desktop menu .item-menu:nth-child(4) {
+  box-sizing: border-box;
+  border-top: 2px solid var(--line-color);
+  border-bottom: 2px solid var(--line-color);
+  padding: 1rem 0 1rem .5rem;
+}
+
+.header-full-desktop menu .item-menu svg {
+  font-size: 1.5rem;
+}
+
+.header-full-desktop menu .item-menu button {
+  border: none;
+  background-color: transparent;
+  color: var(--letter-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 767.999px) {
+  .header-full-desktop {
+    display: none;
+  }
+}

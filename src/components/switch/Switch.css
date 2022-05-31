@@ -1,0 +1,23 @@
+.switch {
+  width: 50px;
+  height: 10px;
+  border-radius: 16px;
+  background-color: rgb(150, 8, 8);
+  text-align: left;
+  padding: 3px;
+}
+
+.switch.on {
+  background-color: rgb(17, 134, 17);
+  text-align: right;
+}
+
+.switch::before {
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: var(--active-button);
+  border-radius: 100%;
+  margin-top: -8px;
+}
