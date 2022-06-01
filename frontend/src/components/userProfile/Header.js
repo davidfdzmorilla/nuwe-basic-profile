@@ -2,6 +2,7 @@ import { HiMenuAlt2 } from 'react-icons/hi';
 import { FiSettings } from 'react-icons/fi';
 
 import '../../style/Header.css'
+import { Logo } from '../Logo/Logo';
 
 
 export const Header = () => {
@@ -10,10 +11,7 @@ export const Header = () => {
       {/* Burguer menu */}
       <HiMenuAlt2 />
       {/* Logo */}
-      <div className='logo-container'>
-        <img src='Nuwe_Mono1.png' alt='logo' className='logo' />
-        <img src='Nuwe_Letters.png' alt='logo-text' className='text-logo' />
-      </div>
+      <Logo />
       {/* Ajustes */}
       <FiSettings />
     </header>

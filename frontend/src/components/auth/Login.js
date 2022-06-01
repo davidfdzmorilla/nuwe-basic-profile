@@ -1,6 +1,7 @@
 import '../../style/Login.css'
 import { useState } from 'react'
 import { useSetModal, useSetUser } from '../../hooks/hooks'
+import { Logo } from '../Logo/Logo.js'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -47,6 +48,7 @@ function Login() {
 
   return (
     <div className='body-login'>
+      <Logo />
       <form className="login" onSubmit={handleSubmit}>
         <label>
           Email
