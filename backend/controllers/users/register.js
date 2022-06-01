@@ -1,16 +1,11 @@
-const crypto = require('crypto')
 const encryptor = require('../../shared/encryptor')
-const fs = require('fs-extra')
 const { userValidator } = require('../../validators')
 const { usersRepository } = require('../../repository')
-const uploads = require('../../shared/uploads')
 
-const { MAX_IMAGE_SIZE_IN_BYTES, ALLOWED_MIMETYPES, UPLOADS_PATH } = process.env
 
 const register = async (req, res) => {
     const user = req.body
 
-    // console.log(user)
 
     try {
         await userValidator.validateAsync(user)

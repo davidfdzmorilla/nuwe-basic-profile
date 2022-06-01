@@ -1,4 +1,3 @@
-const encryptor = require('../../shared/encryptor')
 const { updateUserValidator } = require('../../validators')
 const { usersRepository } = require('../../repository')
 
