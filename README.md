@@ -1,6 +1,7 @@
 # NUWE BASIC PROFILE
 
-Aplicación web desarrolldada para challenge de nuwe.io consistente en perfil de usuario. Donde se encuentran datos personales, datos laborales y puntución en retos.
+Aplicación web desarrolldada para challenge de nuwe.io consistente en perfil de usuario. Donde se encuentran datos personales, datos laborales y puntuación en retos.
+Los datos de usuario se guardan en BBDD con mysql, las peticiones se recogen en Api con Node y express y la parte cliente desarrollada en Rect.
 
 
 ## Deploy
