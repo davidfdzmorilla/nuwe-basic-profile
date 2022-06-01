@@ -19,6 +19,7 @@ function App() {
 
   !localStorage.getItem("user") && saveInStorage('user', { ...users[0] })
   let userStorage = JSON.parse(localStorage.getItem('user'))
+  console.log(userStorage)
 
 
   const [user, setUser] = useState(userStorage)
