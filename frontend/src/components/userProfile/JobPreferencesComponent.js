@@ -1,5 +1,5 @@
 
-import { useSetModal } from '../hooks/hooks'
+import { useSetModal, useUser } from '../../hooks/hooks'
 
 import { GiPositionMarker, GiReceiveMoney } from 'react-icons/gi';
 import { MdOutlineHomeWork } from 'react-icons/md';
@@ -9,11 +9,13 @@ import { FiEdit3 } from 'react-icons/fi';
 import { GoCalendar } from 'react-icons/go';
 
 
-import '../style/JobPreferencesComponent.css'
+import '../../style/JobPreferencesComponent.css'
 import { FormWorkPref } from './FormWorkPref';
 
 
-export const JobPreferencesComponent = ({ user, setUser }) => {
+export const JobPreferencesComponent = () => {
+
+  const user = useUser()
 
   const setModal = useSetModal()
 
@@ -21,7 +23,7 @@ export const JobPreferencesComponent = ({ user, setUser }) => {
   return (
     <article className='card-job-preferences'>
       <h2>Sobre el puesto que busca JohnnD:</h2>
-      <FiEdit3 className='pencil-icon' onClick={() => setModal(<FormWorkPref user={user} setUser={setUser} />)} />
+      <FiEdit3 className='pencil-icon' onClick={() => setModal(<FormWorkPref user={user} />)} />
       <section className='up-container'>
         <div className='item-container'>
           <GiPositionMarker />

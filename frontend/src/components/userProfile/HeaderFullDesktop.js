@@ -5,7 +5,7 @@ import { MdWork, MdOutlineExitToApp } from "react-icons/md";
 import { RiErrorWarningLine, RiDiscordFill, RiHomeLine } from "react-icons/ri";
 import { BiDownArrow } from "react-icons/bi";
 
-import '../style/HeaderFullDesktop.css'
+import '../../style/HeaderFullDesktop.css'
 
 
 export const HeaderFullDesktop = () => {

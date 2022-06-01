@@ -1,7 +1,7 @@
 import { HiMenuAlt2 } from 'react-icons/hi';
 import { FiSettings } from 'react-icons/fi';
 
-import '../style/Header.css'
+import '../../style/Header.css'
 
 
 export const Header = () => {

@@ -1,9 +1,9 @@
 
 import { useState } from 'react'
-import { useSetModal } from '../hooks/hooks'
-import Switch from './switch/Switch'
+import { useSetModal } from '../../hooks/hooks'
+import Switch from '../switch/Switch'
 
-import '../style/FormWorkPref.css'
+import '../../style/FormWorkPref.css'
 
 
 export const FormWorkPref = ({ user, setUser }) => {

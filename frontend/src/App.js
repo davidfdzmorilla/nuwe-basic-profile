@@ -1,51 +1,41 @@
 
-import { Header } from './components/Header'
-import { PersonalDataComponent } from './components/PersonalDataComponent'
-import { JobPreferencesComponent } from './components/JobPreferencesComponent'
-import { NeweProfileComponent } from './components/NeweProfileComponent'
+import { Header } from './components/userProfile/Header'
+import { PersonalDataComponent } from './components/userProfile/PersonalDataComponent'
+import { JobPreferencesComponent } from './components/userProfile/JobPreferencesComponent'
+import { NeweProfileComponent } from './components/userProfile/NeweProfileComponent'
 import Modal from './components/modal/Modal'
 import { saveInStorage } from './helpers/saveInStorage'
 
 import users from './data/users.json'
 
 import './App.css'
-import { useEffect, useState } from 'react'
-import { HeaderFullDesktop } from './components/HeaderFullDesktop'
+import { HeaderFullDesktop } from './components/userProfile/HeaderFullDesktop'
+import { useUser } from './hooks/hooks'
+import Login from './components/auth/Login'
 
 
 function App() {
 
-
-
-  !localStorage.getItem("user") && saveInStorage('user', { ...users[0] })
-  let userStorage = JSON.parse(localStorage.getItem('user'))
-  console.log(userStorage)
-
-
-  const [user, setUser] = useState(userStorage)
-
-  useEffect(() => {
-    setUser(userStorage)
-
-  }, [])
-
-
+  const user = useUser()
 
 
   return (
     <div className="App">
-      {/* Aquí va el header */}
-      <Header />
-      <Modal />
-      <HeaderFullDesktop />
-      <main>
-        {/* Card de datos de perfil */}
-        <PersonalDataComponent user={user} setUser={setUser} />
-        {/* Card preferencias laborales */}
-        <JobPreferencesComponent user={user} setUser={setUser} />
-        {/* Card perfil Newe */}
-        <NeweProfileComponent user={user} />
-      </main>
+      {!user ? <Login /> :
+        <>
+          <Header />
+          <Modal />
+          <HeaderFullDesktop />
+          <main>
+            {/* Card de datos de perfil */}
+            <PersonalDataComponent />
+            {/* Card preferencias laborales */}
+            <JobPreferencesComponent />
+            {/* Card perfil Newe */}
+            <NeweProfileComponent />
+          </main>
+        </>
+      }
     </div>
   )
 }

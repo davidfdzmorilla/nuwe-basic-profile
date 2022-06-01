@@ -2,13 +2,14 @@
 import { useState } from 'react';
 import React from 'react';
 
-import '../style/NeweProfileComponent.css'
+import '../../style/NeweProfileComponent.css'
 import { RadarHardSkills } from './RadarHardSkills';
 import { RadarSoftSkills } from './RadarSoftSkills';
+import { useUser } from '../../hooks/hooks';
 
 
 
-export const NeweProfileComponent = ({ user }) => {
+export const NeweProfileComponent = () => {
 
   const timeLineData = <button className='add-experience-button'>AÑADIR EXPERIENCIA</button>
 

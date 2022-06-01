@@ -1,8 +1,8 @@
 
 import { useState } from 'react'
-import { useSetModal } from '../hooks/hooks'
+import { useSetModal } from '../../hooks/hooks'
 
-import '../style/FormData.css'
+import '../../style/FormData.css'
 
 
 export const FormData = ({ user, setUser }) => {
