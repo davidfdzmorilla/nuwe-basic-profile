@@ -202,21 +202,18 @@ const userValidator = Joi.object().keys({
         }),
     availabilityToTravel: Joi
         .boolean()
-        .required()
         .messages({
             'string.empty': '[availabilityToTravel] is required',
             'any.required': '[availabilityToTravel] is required',
         }),
     remoteWork: Joi
         .boolean()
-        .required()
         .messages({
             'string.empty': '[remoteWork] is required',
             'any.required': '[remoteWork] is required',
         }),
     inmediateIncorporation: Joi
         .boolean()
-        .required()
         .messages({
             'string.empty': '[inmediateIncorporation] is required',
             'any.required': '[inmediateIncorporation] is required',

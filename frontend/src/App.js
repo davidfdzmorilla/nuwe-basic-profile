@@ -4,9 +4,6 @@ import { PersonalDataComponent } from './components/userProfile/PersonalDataComp
 import { JobPreferencesComponent } from './components/userProfile/JobPreferencesComponent'
 import { NeweProfileComponent } from './components/userProfile/NeweProfileComponent'
 import Modal from './components/modal/Modal'
-import { saveInStorage } from './helpers/saveInStorage'
-
-import users from './data/users.json'
 
 import './App.css'
 import { HeaderFullDesktop } from './components/userProfile/HeaderFullDesktop'

@@ -1,8 +1,8 @@
 import './Switch.css'
 
-function Switch({ on }) {
+function Switch({ on, setSwitch, getSwitch }) {
   return (
-    <div className={'switch ' + (on ? 'on' : 'off')} />
+    <div onClick={() => setSwitch(!getSwitch)} className={'switch ' + (on ? 'on' : 'off')} />
   )
 }
 

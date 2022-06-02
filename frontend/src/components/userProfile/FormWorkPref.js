@@ -5,29 +5,47 @@ import Switch from '../switch/Switch'
 
 import '../../style/FormWorkPref.css'
 
-
-export const FormWorkPref = ({ user, setUser }) => {
-
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 
-  const [form, setForm] = useState(user)
+
+export const FormWorkPref = ({ user, reload, setReload, userData }) => {
+
   const setModal = useSetModal()
 
-  const handleSubmit = e => {
+  const [form, setForm] = useState({})
+  const [availabilityToTravelSwitch, setAvailabilityToTravelSwitch] = useState(userData.availabilityToTravel)
+  const [remoteWorkSwitch, setRemoteWorkSwitch] = useState(userData.remoteWork)
+  const [inmediateIncorporationSwitch, setInmediateIncorporationSwitch] = useState(userData.inmediateIncorporation)
+
+
+  const handleSubmit = async e => {
     e.preventDefault()
-    localStorage.setItem('user', JSON.stringify(form))
-    let userStorage = JSON.parse(localStorage.getItem('user'))
-    setUser(userStorage)
-    setModal(null)
+    const res = await fetch(SERVER_URL + '/users/', {
+      method: 'PATCH',
+      body: JSON.stringify({
+        ...form,
+        availabilityToTravel: !!availabilityToTravelSwitch,
+        remoteWork: !!remoteWorkSwitch,
+        inmediateIncorporation: !!inmediateIncorporationSwitch
+      }),
+      headers: {
+        'Authorization': 'Bearer ' + user.token,
+        'Content-Type': 'application/json'
+      }
+    })
+    if (res.ok) {
+      setModal(null)
+      setReload(!reload)
+    }
   }
 
 
 
   const handleChange = (e) => {
-    console.log(e)
     const { name, value } = e.target
     setForm({
-      ...user,
+      ...form,
       [name]: value
     })
   }
@@ -40,31 +58,27 @@ export const FormWorkPref = ({ user, setUser }) => {
         <Switch on={true} />
         <p>Sí, estoy abierto a ofertas de trabajo</p>
         <fieldset>
-          <legend>Puesto</legend>
-          <input name='professionType' onChange={handleChange} type='text' placeholder='Web developer' />
-        </fieldset>
-        <fieldset>
           <legend>Donde quieres trabajar</legend>
-          <input name='ubication' onChange={handleChange} type='text' placeholder='España' />
+          <input name='ubication' onChange={handleChange} type='text' placeholder={userData.ubication} />
         </fieldset>
         <fieldset>
           <legend>Tipo de empresa</legend>
-          <input name='typeCompany' onChange={handleChange} type='text' placeholder='Startup' />
+          <input name='typeCompany' onChange={handleChange} type='text' placeholder={userData.typeCompany} />
         </fieldset>
         <fieldset>
           <legend>Salario mínimo</legend>
-          <input name='minSalary' onChange={handleChange} type='number' placeholder='18000' />
+          <input name='minSalary' onChange={handleChange} type='text' placeholder={userData.minSalary} />
         </fieldset>
         <fieldset>
           <legend>Sueldo óptimo</legend>
-          <input name='likeSalary' onChange={handleChange} type='number' placeholder='18000' />
+          <input name='likeSalary' onChange={handleChange} type='text' placeholder={userData.likeSalary} />
         </fieldset>
-        <Switch name='availabilityToTravel' on={user.availabilityToTravel} />
-        <p>Sí</p>
-        <Switch name='remoteWork' on={user.remoteWork} />
-        <p>Sí</p>
-        <Switch name='immediateIncorporation' on={user.immediateIncorporation} />
-        <p>Sí</p>
+        <Switch setSwitch={setAvailabilityToTravelSwitch} getSwitch={availabilityToTravelSwitch} name='availabilityToTravel' on={availabilityToTravelSwitch} />
+        <p>Disponibilidad para viajar: {availabilityToTravelSwitch ? 'Si' : 'No'}</p>
+        <Switch name='remoteWork' getSwitch={remoteWorkSwitch} setSwitch={setRemoteWorkSwitch} on={remoteWorkSwitch} />
+        <p>Trabajo en remoto: {remoteWorkSwitch ? 'Si' : 'No'}</p>
+        <Switch setSwitch={setInmediateIncorporationSwitch} getSwitch={inmediateIncorporationSwitch} name='inmediateIncorporation' on={inmediateIncorporationSwitch} />
+        <p>Incorporación inmediata: {inmediateIncorporationSwitch ? 'Si' : 'No'}</p>
         <button className='edit-button'>Guardar cambios</button>
       </form>
     </>

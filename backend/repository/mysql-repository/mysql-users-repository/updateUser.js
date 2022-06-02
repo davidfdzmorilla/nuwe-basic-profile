@@ -2,11 +2,8 @@ const connection = require('../mysqlConnection')
 
 const updateUser = async (newUserData) => {
 
-
-
     const { userId, headerPic, avatar, professionType, professionLevel, bio, country, city, linkedin, gitHub, gitLab, behance, ubication, typeCompany, minSalary, likeSalary, availabilityToTravel, remoteWork, inmediateIncorporation } = newUserData
-    if (!avatar && !headerPic && !professionType && !professionLevel && !bio && !country && !city && !linkedin && !gitHub && !gitLab && !behance && !ubication && !typeCompany && !minSalary && !likeSalary && !availabilityToTravel & !remoteWork & !inmediateIncorporation) return
-
+    if (!avatar && !headerPic && !professionType && !professionLevel && !bio && !country && !city && !linkedin && !gitHub && !gitLab && !behance && !ubication && !typeCompany && !minSalary && !likeSalary && !availabilityToTravel && !remoteWork && !inmediateIncorporation) return
     let query = 'UPDATE users SET'
     const params = []
 

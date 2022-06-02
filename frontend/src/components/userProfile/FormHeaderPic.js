@@ -4,8 +4,10 @@ import { useSetModal } from '../../hooks/hooks'
 
 import '../../style/FormHeaderPic.css'
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
-export const FormHeaderPic = ({ user, setUser }) => {
+
+export const FormHeaderPic = ({ user, reload, setReload }) => {
 
   const [images, setImages] = useState([])
   const [query, setQuery] = useState('code')
@@ -39,14 +41,19 @@ export const FormHeaderPic = ({ user, setUser }) => {
 
   }
 
-  const onChangePic = picUrl => {
-    localStorage.setItem('user', JSON.stringify({
-      ...user,
-      headerPic: picUrl
-    }))
-    let userStorage = JSON.parse(localStorage.getItem('user'))
-    setUser(userStorage)
-    setModal(null)
+  const onChangePic = async headerPic => {
+    const res = await fetch(SERVER_URL + '/users/', {
+      method: 'PATCH',
+      body: JSON.stringify({ headerPic }),
+      headers: {
+        'Authorization': 'Bearer ' + user.token,
+        'Content-Type': 'application/json'
+      }
+    })
+    if (res.ok) {
+      setModal(null)
+      setReload(!reload)
+    }
   }
 
 

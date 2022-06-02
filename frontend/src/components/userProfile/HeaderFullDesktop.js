@@ -6,9 +6,12 @@ import { RiErrorWarningLine, RiDiscordFill, RiHomeLine } from "react-icons/ri";
 import { BiDownArrow } from "react-icons/bi";
 
 import '../../style/HeaderFullDesktop.css'
+import { useSetUser } from "../../hooks/hooks";
 
 
 export const HeaderFullDesktop = () => {
+
+  const setUser = useSetUser()
 
   const [practiceItems, setPracticeItem] = useState('')
   const [show, setShow] = useState(false)
@@ -63,9 +66,9 @@ export const HeaderFullDesktop = () => {
         </div>
         <div className='item-menu'>
           <MdOutlineExitToApp />
-          <button>Cerrar Sesión</button>
+          <button onClick={() => setUser(null)}>Cerrar Sesión</button>
         </div>
       </menu>
-    </header>
+    </header >
   )
 }

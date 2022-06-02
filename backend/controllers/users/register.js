@@ -5,6 +5,7 @@ const { usersRepository } = require('../../repository')
 
 const register = async (req, res) => {
     const user = req.body
+    console.log(req.body)
 
 
     try {
@@ -51,7 +52,7 @@ const register = async (req, res) => {
 
     res.status(201)
     res.send({
-        message: 'User registered and validation email sent',
+        message: 'User registered',
         userId: userId
     })
 

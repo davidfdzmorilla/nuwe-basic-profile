@@ -4,10 +4,7 @@ const { usersRepository } = require('../../repository')
 const updateUser = async (req, res) => {
     let newUserData = req.body
     const userId = req.user.id
-    console.log(userId)
-
-    console.log(newUserData)
-
+    // console.log(newUserData)
     try {
         await updateUserValidator.validateAsync(newUserData)
     } catch (error) {
