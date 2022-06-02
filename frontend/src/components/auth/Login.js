@@ -2,6 +2,7 @@ import '../../style/Login.css'
 import { useState } from 'react'
 import { useSetModal, useSetUser } from '../../hooks/hooks'
 import { Logo } from '../Logo/Logo.js'
+import { Register } from './Register'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -10,6 +11,7 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
+  const [action, setAction] = useState('login')
   const setUser = useSetUser()
   const setModal = useSetModal()
 
@@ -49,19 +51,24 @@ function Login() {
   return (
     <div className='body-login'>
       <Logo />
-      <form className="login" onSubmit={handleSubmit}>
-        <label>
-          Email
-          <input name='email' type='email' placeholder='ejemplo@ejemplo.com...' value={email} onChange={e => setEmail(e.target.value)} />
-        </label>
-        <label>
-          Contraseña
-          <input name='contraseña' type='password' placeholder='contraseña...' value={password} onChange={e => setPassword(e.target.value)} />
-        </label>
-        <button className='entrar-button'>Login</button>
-        {error && <div className="error">{error}</div>}
-      </form>
-      <p>¿No estás registrado?</p>
+      {action === 'register' ? <Register setAction={setAction} /> :
+        <>
+          <form className="login" onSubmit={handleSubmit}>
+            <label>
+              Email
+              <input name='email' type='email' placeholder='ejemplo@ejemplo.com...' value={email} onChange={e => setEmail(e.target.value)} />
+            </label>
+            <label>
+              Contraseña
+              <input name='contraseña' type='password' placeholder='contraseña...' value={password} onChange={e => setPassword(e.target.value)} />
+            </label>
+            <button className='entrar-button'>Login</button>
+            {error && <div className="error">{error}</div>}
+          </form>
+          <p>¿No estás registrado?</p>
+          <button onClick={() => setAction('register')} className='entrar-button'>Regístrate</button>
+        </>
+      }
     </div>
   )
 }

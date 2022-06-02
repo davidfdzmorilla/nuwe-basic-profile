@@ -21,10 +21,10 @@ function App() {
 
   return (
     <div className="App">
+      <Modal />
       {!user ? <Login /> :
         <>
           <Header />
-          <Modal />
           <HeaderFullDesktop />
           <main>
             {/* Card de datos de perfil */}
