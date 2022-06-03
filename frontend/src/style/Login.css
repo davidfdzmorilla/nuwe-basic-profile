@@ -64,6 +64,11 @@ form.login input {
   font-size: 25px;
 }
 
+.body-login .register-ok {
+  color: var(--active-button);
+}
+
+
 @media (max-width:480px) {
   .login .btn-close {
     display: inline;

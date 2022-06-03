@@ -49,8 +49,8 @@ export const FormWorkPref = ({ user, reload, setReload, userData }) => {
 
   return (
     <>
-      <h3>Indicanos si estás abierto a ofertas de trabajo</h3>
       <form name='ubication' className='form-work-preferences' onSubmit={handleSubmit}>
+        <h3>Indicanos si estás abierto a ofertas de trabajo</h3>
         <Switch on={true} />
         <p>Sí, estoy abierto a ofertas de trabajo</p>
         <fieldset>

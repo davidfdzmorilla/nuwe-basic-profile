@@ -1,14 +1,14 @@
 .switch {
   width: 50px;
-  height: 10px;
+  height: 2px;
   border-radius: 16px;
-  background-color: rgb(150, 8, 8);
+  background-color: rgba(255, 0, 0, 0.562);
   text-align: left;
-  padding: 3px;
+  padding-bottom: 1rem;
 }
 
 .switch.on {
-  background-color: rgb(17, 134, 17);
+  background-color: var(--active-button);
   text-align: right;
 }
 
@@ -17,7 +17,8 @@
   display: inline-block;
   width: 25px;
   height: 25px;
-  background-color: var(--active-button);
+  background-color: var(--letter-color);
   border-radius: 100%;
+  border: 1px solid black;
   margin-top: -8px;
 }

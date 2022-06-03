@@ -22,6 +22,8 @@ export const PersonalDataComponent = () => {
   const [userData, setUserData] = useState(user)
   const [reload, setReload] = useState(null)
 
+  console.log(userData)
+
 
   useEffect(() => {
     const loadData = async () => {
@@ -58,8 +60,8 @@ export const PersonalDataComponent = () => {
         <p>{userData.bio}</p>
         <p><GiPositionMarker /> {userData.country} {userData.city}</p>
         <div className='social-container'>
-          <a href={userData.linkedin}><BsLinkedin /></a>
-          <a href={userData.gitHub}><BsGithub /></a>
+          <a href={userData.linkedin} target='_blank' rel='noreferrer nopener'><BsLinkedin /></a>
+          <a href={userData.github} target='_blank' rel='noreferrer nopener'><BsGithub /></a>
         </div>
       </section>
       <fieldset>

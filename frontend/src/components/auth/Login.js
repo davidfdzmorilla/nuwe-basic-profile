@@ -12,8 +12,10 @@ function Login() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
   const [action, setAction] = useState('login')
+  const [registerOk, setRegisterOk] = useState(null)
   const setUser = useSetUser()
   const setModal = useSetModal()
+
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -51,7 +53,7 @@ function Login() {
   return (
     <div className='body-login'>
       <Logo />
-      {action === 'register' ? <Register setAction={setAction} /> :
+      {action === 'register' ? <Register setRegisterOk={setRegisterOk} setAction={setAction} /> :
         <>
           <form className="login" onSubmit={handleSubmit}>
             <label>
@@ -65,8 +67,13 @@ function Login() {
             <button className='entrar-button'>Login</button>
             {error && <div className="error">{error}</div>}
           </form>
-          <p>¿No estás registrado?</p>
-          <button onClick={() => setAction('register')} className='entrar-button'>Regístrate</button>
+          {!registerOk ?
+            <>
+              <p>¿No estás registrado?</p>
+              <button onClick={() => setAction('register')} className='entrar-button'>Regístrate</button>
+            </> :
+            <p className='register-ok'>{registerOk}</p>
+          }
         </>
       }
     </div>

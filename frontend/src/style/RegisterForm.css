@@ -8,12 +8,22 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(auto);
   justify-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .register-form fieldset {
   width: 80%;
   padding: 0;
+}
+
+.register-form .switch {
+  margin: 2rem auto;
+}
+
+.register-form .text-area-fieldset {
+  margin: 2rem auto;
+  text-align: center;
+  width: 80%;
 }
 
 .register-form input,
@@ -27,6 +37,10 @@
   margin: 0 auto;
   box-sizing: border-box;
   transition: all 300ms;
+}
+
+.register-form textarea {
+  height: 175px;
 }
 
 

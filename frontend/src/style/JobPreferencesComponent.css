@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.card-job-preferences h2 {
+  padding-right: 2rem;
+}
+
 .card-job-preferences .pencil-icon {
   font-size: 1.3rem;
   position: absolute;

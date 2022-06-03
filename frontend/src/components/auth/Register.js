@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 
 import '../../style/RegisterForm.css'
+import Switch from '../switch/Switch'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -33,15 +34,17 @@ const defaultForm = {
 }
 
 
-export const Register = ({ setAction }) => {
+export const Register = ({ setAction, setRegisterOk }) => {
 
   const headerPic = 'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzMzNDB8MHwxfHNlYXJjaHwyfHxjb2RlfGVufDB8fHx8MTY1NDE4NTQxOA&ixlib=rb-1.2.1&q=80'
 
   const [form, setForm] = useState(defaultForm)
+  const [availabilityToTravelSwitch, setAvailabilityToTravelSwitch] = useState(false)
+  const [remoteWorkSwitch, setRemoteWorkSwitch] = useState(false)
+  const [inmediateIncorporationSwitch, setInmediateIncorporationSwitch] = useState(false)
 
   const handleSubmit = async e => {
     e.preventDefault()
-    console.log(form)
     const { headerPic, avatar, name, email, password, tel, professionType, professionLevel, bio, country, city, linkedin, gitHub, gitLab, behance, ubication, typeCompany, minSalary, likeSalary, availabilityToTravel, remoteWork, inmediateIncorporation } = form
 
     if (!headerPic && !avatar && !name && !email && !password && !tel && !professionType && !professionLevel && !bio && !country && !city && !linkedin && !gitHub && !gitLab && !behance && !ubication && !typeCompany && !minSalary && !likeSalary && !availabilityToTravel && !remoteWork && !inmediateIncorporation) return
@@ -50,11 +53,18 @@ export const Register = ({ setAction }) => {
     const res = await fetch(SERVER_URL + '/users/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...form })
+      body: JSON.stringify({
+        ...form,
+        availabilityToTravel: !!availabilityToTravelSwitch,
+        remoteWork: !!remoteWorkSwitch,
+        inmediateIncorporation: !!inmediateIncorporationSwitch
+      })
     })
+
 
     if (res.ok) {
       setAction('login')
+      setRegisterOk('Usuario registrado con éxito. Ya puedes hacer login.')
     } else {
       console.log('error')
     }
@@ -72,16 +82,6 @@ export const Register = ({ setAction }) => {
 
   }
 
-  const handleBoolean = ({ target }) => {
-
-    let { name, checked } = target
-
-    setForm({
-      ...form,
-      [name]: checked
-    })
-
-  }
 
 
   return (
@@ -120,10 +120,6 @@ export const Register = ({ setAction }) => {
           <fieldset>
             <legend>Nivel</legend>
             <input onChange={handleChange} type='text' name='professionLevel' placeholder='Introduce nivel...' required />
-          </fieldset>
-          <fieldset>
-            <legend>Bio</legend>
-            <textarea onChange={handleChange} type='text' name='bio' placeholder='Cuéntanos sobre tí...' required />
           </fieldset>
           <fieldset>
             <legend>País</legend>
@@ -167,17 +163,21 @@ export const Register = ({ setAction }) => {
           </fieldset>
           <fieldset>
             <legend>Disponibilidad para viajar</legend>
-            <input onChange={handleBoolean} type='checkbox' name='availabilityToTravel' />
+            <Switch setSwitch={setAvailabilityToTravelSwitch} getSwitch={availabilityToTravelSwitch} name='availabilityToTravel' on={availabilityToTravelSwitch} />
           </fieldset>
           <fieldset>
             <legend>Trabajo remoto</legend>
-            <input onChange={handleBoolean} type='checkbox' name='remoteWork' />
+            <Switch name='remoteWork' getSwitch={remoteWorkSwitch} setSwitch={setRemoteWorkSwitch} on={remoteWorkSwitch} />
           </fieldset>
           <fieldset>
             <legend>Incorporación inmediata</legend>
-            <input onChange={handleBoolean} type='checkbox' name='inmediateIncorporation' />
+            <Switch setSwitch={setInmediateIncorporationSwitch} getSwitch={inmediateIncorporationSwitch} name='inmediateIncorporation' on={inmediateIncorporationSwitch} />
           </fieldset>
         </section>
+        <fieldset className='text-area-fieldset'>
+          <legend>Bio</legend>
+          <textarea onChange={handleChange} type='text' name='bio' placeholder='Cuéntanos sobre tí...' required />
+        </fieldset>
         <div className='buttons-container'>
           <button>Enviar</button>
           <button onClick={() => setAction('login')}>Salir</button>

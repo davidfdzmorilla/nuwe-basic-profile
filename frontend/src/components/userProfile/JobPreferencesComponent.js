@@ -49,7 +49,7 @@ export const JobPreferencesComponent = () => {
 
   return (
     <article className='card-job-preferences'>
-      <h2>Sobre el puesto que busca JohnnD:</h2>
+      <h2>Sobre el puesto que busca {userData.name}:</h2>
       <FiEdit3 className='pencil-icon' onClick={() => setModal(<FormWorkPref userData={userData} reload={reload} setReload={setReload} user={user} />)} />
       <section className='up-container'>
         <div className='item-container'>

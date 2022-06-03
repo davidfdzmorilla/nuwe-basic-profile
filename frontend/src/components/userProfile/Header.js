@@ -1,11 +1,15 @@
 import { HiMenuAlt2 } from 'react-icons/hi';
-import { FiSettings } from 'react-icons/fi';
+import { BiExit } from 'react-icons/bi';
 
 import '../../style/Header.css'
 import { Logo } from '../Logo/Logo';
+import { useSetUser } from '../../hooks/hooks';
 
 
 export const Header = () => {
+
+  const setUser = useSetUser()
+
   return (
     <header className='header'>
       {/* Burguer menu */}
@@ -13,7 +17,7 @@ export const Header = () => {
       {/* Logo */}
       <Logo />
       {/* Ajustes */}
-      <FiSettings />
+      <BiExit onClick={() => setUser(null)} />
     </header>
   )
 }
