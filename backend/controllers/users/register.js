@@ -5,7 +5,6 @@ const { usersRepository } = require('../../repository')
 
 const register = async (req, res) => {
     const user = req.body
-    console.log(req.body)
 
 
     try {

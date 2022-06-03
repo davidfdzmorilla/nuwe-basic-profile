@@ -1,5 +1,6 @@
 
 import { useState } from 'react'
+import { validateData } from '../../utils/validateData'
 
 
 import '../../style/RegisterForm.css'
@@ -42,6 +43,8 @@ export const Register = ({ setAction, setRegisterOk }) => {
   const [availabilityToTravelSwitch, setAvailabilityToTravelSwitch] = useState(false)
   const [remoteWorkSwitch, setRemoteWorkSwitch] = useState(false)
   const [inmediateIncorporationSwitch, setInmediateIncorporationSwitch] = useState(false)
+  const [errorType, setErrorType] = useState('')
+  const [errorText, setErrorText] = useState('')
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -49,6 +52,14 @@ export const Register = ({ setAction, setRegisterOk }) => {
 
     if (!headerPic && !avatar && !name && !email && !password && !tel && !professionType && !professionLevel && !bio && !country && !city && !linkedin && !gitHub && !gitLab && !behance && !ubication && !typeCompany && !minSalary && !likeSalary && !availabilityToTravel && !remoteWork && !inmediateIncorporation) return
 
+    const { errorTypeValidation, errorTextValidation } = validateData(name, email, tel, professionType, professionLevel, country, city, ubication, typeCompany, minSalary, likeSalary)
+
+    if (errorTypeValidation) {
+      setErrorType(errorTypeValidation)
+      setErrorText(errorTextValidation)
+      document.getElementById(errorTypeValidation).focus()
+      return
+    }
 
     const res = await fetch(SERVER_URL + '/users/register', {
       method: 'POST',
@@ -74,6 +85,9 @@ export const Register = ({ setAction, setRegisterOk }) => {
 
     let { name, value } = target
 
+    setErrorType('')
+    setErrorText('')
+
     setForm({
       ...form,
       headerPic,
@@ -91,19 +105,21 @@ export const Register = ({ setAction, setRegisterOk }) => {
         <section className='inputs-container'>
           <fieldset>
             <legend>Url avatar</legend>
-            <input onChange={handleChange} type='url' name='avatar' placeholder='Introduce URL...' required />
+            <input id='url' onChange={handleChange} type='url' name='avatar' placeholder='Introduce URL...' required />
           </fieldset>
           <fieldset>
             <legend>Nombre</legend>
-            <input onChange={handleChange} type='text' name='name' placeholder='Introduce nombre...' required />
+            <input id='text' min={4} max={20} onChange={handleChange} type='text' name='name' placeholder='Introduce nombre...' required />
+            {errorType === 'name' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Email</legend>
-            <input onChange={handleChange} type='email' name='email' placeholder='Introduce email...' required />
+            <input id='email' onChange={handleChange} type='email' name='email' placeholder='Introduce email...' required />
+            {errorType === 'email' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Password</legend>
-            <input onChange={handleChange} type='password' name='password' placeholder='Introduce password...' required />
+            <input min={6} max={20} onChange={handleChange} type='password' name='password' placeholder='Introduce password...' required />
           </fieldset>
           {/* <fieldset>
             <legend>Repite password</legend>
@@ -111,23 +127,28 @@ export const Register = ({ setAction, setRegisterOk }) => {
           </fieldset> */}
           <fieldset>
             <legend>Teléfono</legend>
-            <input onChange={handleChange} type='text' name='tel' placeholder='Introduce teléfono...' required />
+            <input id='tel' onChange={handleChange} type='text' name='tel' placeholder='Introduce teléfono...' required />
+            {errorType === 'tel' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Puesto</legend>
-            <input onChange={handleChange} type='text' name='professionType' placeholder='Introduce puesto...' required />
+            <input id='professionType' min={4} max={20} onChange={handleChange} type='text' name='professionType' placeholder='Introduce puesto...' required />
+            {errorType === 'professionType' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Nivel</legend>
-            <input onChange={handleChange} type='text' name='professionLevel' placeholder='Introduce nivel...' required />
+            <input id='professionLevel' min={4} max={20} onChange={handleChange} type='text' name='professionLevel' placeholder='Introduce nivel...' required />
+            {errorType === 'professionLevel' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>País</legend>
-            <input onChange={handleChange} type='text' name='country' placeholder='Introduce país...' required />
+            <input id='country' min={4} max={20} onChange={handleChange} type='text' name='country' placeholder='Introduce país...' required />
+            {errorType === 'country' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Ciudad</legend>
-            <input onChange={handleChange} type='text' name='city' placeholder='Introduce ciudad...' required />
+            <input id='city' min={4} max={20} onChange={handleChange} type='text' name='city' placeholder='Introduce ciudad...' required />
+            {errorType === 'city' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Linkedin</legend>
@@ -147,19 +168,23 @@ export const Register = ({ setAction, setRegisterOk }) => {
           </fieldset>
           <fieldset>
             <legend>Donde buscas empleo</legend>
-            <input onChange={handleChange} type='text' name='ubication' placeholder='Introduce tu preferencia...' required />
+            <input id='ubication' min={4} max={20} onChange={handleChange} type='text' name='ubication' placeholder='Introduce tu preferencia...' required />
+            {errorType === 'ubication' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Tipo de compañia</legend>
-            <input onChange={handleChange} type='text' name='typeCompany' placeholder='Introduce tu preferencia...' required />
+            <input id='typeCompany' min={4} max={20} onChange={handleChange} type='text' name='typeCompany' placeholder='Introduce tu preferencia...' required />
+            {errorType === 'typeCompany' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Salario mínimo</legend>
-            <input onChange={handleChange} type='text' name='minSalary' placeholder='Introduce cifra...' required />
+            <input id='minSalary' onChange={handleChange} type='text' name='minSalary' placeholder='Introduce cifra...' required />
+            {errorType === 'minSalary' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Salario deseado</legend>
-            <input onChange={handleChange} type='text' name='likeSalary' placeholder='Introduce cifra...' required />
+            <input id='likeSalary' onChange={handleChange} type='text' name='likeSalary' placeholder='Introduce cifra...' required />
+            {errorType === 'likeSalary' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Disponibilidad para viajar</legend>

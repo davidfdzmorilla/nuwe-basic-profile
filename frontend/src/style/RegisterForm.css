@@ -39,6 +39,18 @@
   transition: all 300ms;
 }
 
+.error-text {
+  box-sizing: border-box;
+  width: 220px;
+  font-size: 1rem;
+  position: absolute;
+  background-color: white;
+  color: rgba(255, 0, 0, 0.699);
+  margin: 0.5rem 0;
+  padding: 0.2rem 1rem 1rem 0.5rem;
+  border-radius: 10px;
+}
+
 .register-form textarea {
   height: 175px;
 }

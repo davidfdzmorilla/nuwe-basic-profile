@@ -6,7 +6,6 @@ const { usersRepository } = require('../../repository')
 
 const login = async (req, res) => {
   const credentials = req.body
-  console.log(credentials)
 
   try {
     await credentialsValidator.validateAsync(credentials)
