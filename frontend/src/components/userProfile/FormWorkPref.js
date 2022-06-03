@@ -18,7 +18,6 @@ export const FormWorkPref = ({ user, reload, setReload, userData }) => {
   const [remoteWorkSwitch, setRemoteWorkSwitch] = useState(userData.remoteWork)
   const [inmediateIncorporationSwitch, setInmediateIncorporationSwitch] = useState(userData.inmediateIncorporation)
 
-
   const handleSubmit = async e => {
     e.preventDefault()
     const res = await fetch(SERVER_URL + '/users/', {
@@ -40,8 +39,6 @@ export const FormWorkPref = ({ user, reload, setReload, userData }) => {
     }
   }
 
-
-
   const handleChange = (e) => {
     const { name, value } = e.target
     setForm({
@@ -49,7 +46,6 @@ export const FormWorkPref = ({ user, reload, setReload, userData }) => {
       [name]: value
     })
   }
-
 
   return (
     <>
@@ -83,4 +79,5 @@ export const FormWorkPref = ({ user, reload, setReload, userData }) => {
       </form>
     </>
   )
+
 }

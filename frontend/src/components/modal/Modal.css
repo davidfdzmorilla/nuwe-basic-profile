@@ -12,10 +12,12 @@
 }
 
 .modal-fg {
+  max-height: 80vh;
   background-color: var(--primary-color);
   padding: 30px;
   border-radius: 20px;
   position: relative;
+  overflow: scroll;
 }
 
 .modal-fg .close-button {

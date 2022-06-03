@@ -4,7 +4,6 @@ const { usersRepository } = require('../../repository')
 const updateUser = async (req, res) => {
     let newUserData = req.body
     const userId = req.user.id
-    // console.log(newUserData)
     try {
         await updateUserValidator.validateAsync(newUserData)
     } catch (error) {
@@ -17,7 +16,7 @@ const updateUser = async (req, res) => {
         await usersRepository.updateUser({ ...newUserData, userId })
     } catch (error) {
         res.status(500)
-        res.send({ error: 'error.message' })
+        res.send({ error: error.message })
         return
     }
 

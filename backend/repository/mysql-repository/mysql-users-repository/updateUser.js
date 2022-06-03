@@ -2,10 +2,11 @@ const connection = require('../mysqlConnection')
 
 const updateUser = async (newUserData) => {
 
-    const { userId, headerPic, avatar, professionType, professionLevel, bio, country, city, linkedin, gitHub, gitLab, behance, ubication, typeCompany, minSalary, likeSalary, availabilityToTravel, remoteWork, inmediateIncorporation } = newUserData
-    if (!avatar && !headerPic && !professionType && !professionLevel && !bio && !country && !city && !linkedin && !gitHub && !gitLab && !behance && !ubication && !typeCompany && !minSalary && !likeSalary && !availabilityToTravel && !remoteWork && !inmediateIncorporation) return
+    let { userId, headerPic, avatar, professionType, professionLevel, bio, country, city, linkedin, gitHub, gitLab, behance, ubication, typeCompany, minSalary, likeSalary, availabilityToTravel, remoteWork, inmediateIncorporation } = newUserData
+    if (!avatar && !headerPic && !professionType && !professionLevel && !bio && !country && !city && !linkedin && !gitHub && !gitLab && !behance && !ubication && !typeCompany && !minSalary && !likeSalary && (availabilityToTravel !== true || availabilityToTravel !== false) && inmediateIncorporation === null && remoteWork === null) return
     let query = 'UPDATE users SET'
     const params = []
+
 
     if (avatar) {
         query += ' avatar = ?'
@@ -81,17 +82,17 @@ const updateUser = async (newUserData) => {
         query += ' like_salary = ?'
         params.push(likeSalary)
     }
-    if (availabilityToTravel) {
+    if (availabilityToTravel !== null && availabilityToTravel !== undefined) {
         if (params.length > 0) query += ','
         query += ' availability_to_travel = ?'
         params.push(availabilityToTravel)
     }
-    if (remoteWork) {
+    if (remoteWork !== null && remoteWork !== undefined) {
         if (params.length > 0) query += ','
         query += ' remote_work = ?'
         params.push(remoteWork)
     }
-    if (inmediateIncorporation) {
+    if (inmediateIncorporation !== null && inmediateIncorporation !== undefined) {
         if (params.length > 0) query += ','
         query += ' inmediate_incorporation = ?'
         params.push(inmediateIncorporation)

@@ -27,8 +27,6 @@ export const JobPreferencesComponent = () => {
   const [userData, setUserData] = useState(user)
   const [reload, setReload] = useState(null)
 
-  console.log(userData)
-
 
   useEffect(() => {
     const loadData = async () => {
@@ -69,16 +67,27 @@ export const JobPreferencesComponent = () => {
       </section>
       <section className='down-container'>
         <div className='item-container'>
-          <SiYourtraveldottv />
-          <p>{userData.availabilityToTravel ? 'Disponibilidad para viajar' : ''}</p>
+          {userData.availabilityToTravel === 1 &&
+            <>
+              <SiYourtraveldottv />
+              <p>Disponibilidad para viajar</p>
+            </>}
         </div>
         <div className='item-container'>
-          <VscRemoteExplorer />
-          <p>{userData.remoteWork ? 'Disponibilidad para trabajar en remoto' : ''}</p>
+          {userData.remoteWork === 1 &&
+            <>
+              <VscRemoteExplorer />
+              <p>Disponibilidad para trabajar en remoto</p>
+            </>
+          }
         </div>
         <div className='item-container'>
-          <GoCalendar />
-          <p>{userData.inmediateIncorporation ? 'Incorporación inmediata' : ''}</p>
+          {userData.inmediateIncorporation === 1 &&
+            <>
+              <GoCalendar />
+              <p>Incorporación inmediata</p>
+            </>
+          }
         </div>
       </section>
     </article>
