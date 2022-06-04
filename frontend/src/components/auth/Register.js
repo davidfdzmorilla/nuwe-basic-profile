@@ -121,10 +121,6 @@ export const Register = ({ setAction, setRegisterOk }) => {
             <legend>Password</legend>
             <input min={6} max={20} onChange={handleChange} type='password' name='password' placeholder='Introduce password...' required />
           </fieldset>
-          {/* <fieldset>
-            <legend>Repite password</legend>
-            <input onChange={handleChange} type='password' name='repeatPassword' placeholder='Repite password...' required />
-          </fieldset> */}
           <fieldset>
             <legend>Teléfono</legend>
             <input id='tel' onChange={handleChange} type='text' name='tel' placeholder='Introduce teléfono...' required />
@@ -201,7 +197,7 @@ export const Register = ({ setAction, setRegisterOk }) => {
         </section>
         <fieldset className='text-area-fieldset'>
           <legend>Bio</legend>
-          <textarea onChange={handleChange} type='text' name='bio' placeholder='Cuéntanos sobre tí...' required />
+          <textarea min={50} max={600} onChange={handleChange} type='text' name='bio' placeholder='Cuéntanos sobre tí...' required />
         </fieldset>
         <div className='buttons-container'>
           <button>Enviar</button>

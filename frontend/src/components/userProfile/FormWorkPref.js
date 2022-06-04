@@ -20,6 +20,10 @@ export const FormWorkPref = ({ user, reload, setReload, userData }) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+    if (!form.ubication && !form.typeCompany && !form.minSalary && !form.likeSalary && availabilityToTravelSwitch === userData.availabilityToTravel && remoteWorkSwitch === userData.remoteWork && inmediateIncorporationSwitch === userData.inmediateIncorporation) {
+      setModal(null)
+      return
+    }
     const res = await fetch(SERVER_URL + '/users/', {
       method: 'PATCH',
       body: JSON.stringify({

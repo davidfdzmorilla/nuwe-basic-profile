@@ -15,6 +15,10 @@ export const FormData = ({ user, reload, setReload, userData }) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+    if (!form.avatar && !form.professionType && !form.professionLevel && !form.country && !form.city && !form.bio && !form.linkedin && !form.github && !form.gitlab && !form.behance) {
+      setModal(null)
+      return
+    }
     const res = await fetch(SERVER_URL + '/users/', {
       method: 'PATCH',
       body: JSON.stringify({ ...form }),
@@ -81,11 +85,11 @@ export const FormData = ({ user, reload, setReload, userData }) => {
           </fieldset>
           <fieldset>
             <legend>GitHub</legend>
-            <input onChange={handleChange} name='gitHub' type='url' placeholder={userData.gitHub} />
+            <input onChange={handleChange} name='gitHub' type='url' placeholder={userData.github} />
           </fieldset>
           <fieldset>
             <legend>GitLab</legend>
-            <input onChange={handleChange} name='gitLab' type='url' placeholder={userData.gitLab} />
+            <input onChange={handleChange} name='gitLab' type='url' placeholder={userData.gitlab} />
           </fieldset>
           <fieldset>
             <legend>Behance</legend>

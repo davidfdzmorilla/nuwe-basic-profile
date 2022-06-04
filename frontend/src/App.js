@@ -1,15 +1,14 @@
 
+
+import { useUser } from './hooks/hooks'
+
+import { HeaderFullDesktop } from './components/userProfile/HeaderFullDesktop'
+import Login from './components/auth/Login'
 import { Header } from './components/userProfile/Header'
-import { PersonalDataComponent } from './components/userProfile/PersonalDataComponent'
-import { JobPreferencesComponent } from './components/userProfile/JobPreferencesComponent'
-import { NeweProfileComponent } from './components/userProfile/NeweProfileComponent'
 import Modal from './components/modal/Modal'
+import { Main } from './components/userProfile/Main'
 
 import './App.css'
-import { HeaderFullDesktop } from './components/userProfile/HeaderFullDesktop'
-import { useUser } from './hooks/hooks'
-import Login from './components/auth/Login'
-
 
 function App() {
 
@@ -23,14 +22,7 @@ function App() {
         <>
           <Header />
           <HeaderFullDesktop />
-          <main>
-            {/* Card de datos de perfil */}
-            <PersonalDataComponent />
-            {/* Card preferencias laborales */}
-            <JobPreferencesComponent />
-            {/* Card perfil Newe */}
-            <NeweProfileComponent />
-          </main>
+          <Main />
         </>
       }
     </div>

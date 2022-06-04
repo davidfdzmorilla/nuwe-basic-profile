@@ -6,13 +6,13 @@
   border: 1px solid var(--line-color);
   background-color: var(--secondary-color);
   border-radius: 10px;
-  padding: .5rem;
+  padding: 1rem 3rem;
   margin: 0 1rem;
   position: relative;
 }
 
 .card-job-preferences h2 {
-  padding-right: 2rem;
+  padding-right: 5rem;
 }
 
 .card-job-preferences .pencil-icon {

@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { FiEdit3 } from 'react-icons/fi';
 import { GiPositionMarker } from 'react-icons/gi';
-import { useSetModal, useUser } from '../../hooks/hooks';
+import { useSetModal, useSetUser, useUser } from '../../hooks/hooks';
 
 import '../../style/PersonalDataComponent.css'
 import { FormData } from './FormData';
 import { FormHeaderPic } from './FormHeaderPic';
+import { Stacks } from './Stacks';
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -15,6 +16,7 @@ const SERVER_URL = process.env.REACT_APP_SERVER_URL
 export const PersonalDataComponent = () => {
 
   const user = useUser()
+  const setUser = useSetUser()
 
   const setModal = useSetModal()
 
@@ -32,6 +34,9 @@ export const PersonalDataComponent = () => {
             'Authorization': 'Bearer ' + user.token
           }
         })
+        if (response.status === 401) {
+          setUser(null)
+        }
         const data = await response.json()
         setUserData(data)
         setError(null)
@@ -42,7 +47,8 @@ export const PersonalDataComponent = () => {
     loadData()
   }, [reload, user])
 
-  const stack = ['1', '2', '3', '4', '5', '6']
+
+
 
   return (
     <article className='card-personal-data'>
@@ -63,16 +69,7 @@ export const PersonalDataComponent = () => {
           <a href={userData.github} target='_blank' rel='noreferrer nopener'><BsGithub /></a>
         </div>
       </section>
-      <fieldset>
-        <legend>Stack</legend>
-        <section className='stack-container'>
-          {stack?.map((stack, i) => {
-            return (
-              <span className='stack-item' key={i} />
-            )
-          })}
-        </section>
-      </fieldset>
+      <Stacks userData={userData} />
     </article>
   )
 }
