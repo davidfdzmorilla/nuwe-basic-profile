@@ -69,7 +69,7 @@ export const PersonalDataComponent = () => {
           <a href={userData.github} target='_blank' rel='noreferrer nopener'><BsGithub /></a>
         </div>
       </section>
-      <Stacks userData={userData} />
+      <Stacks stack={userData.stack} />
     </article>
   )
 }

@@ -110,3 +110,82 @@ fieldset {
   height: 50px;
   border-radius: 10px;
 }
+
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.form-stack .stack-container {
+  width: 100%;
+}
+
+.form-stack .stack-container .skills-match-container {
+  top: -200px;
+  width: 100%;
+  border: 1px solid var(--line-color);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.form-stack .stack-container .skills-match-container li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.form-stack .stack-container .skills-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--line-color);
+  border-radius: 7px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+
+.form-stack .stack-container .skills-container li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--line-color);
+  gap: .5rem;
+  padding: .5rem 1rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+
+.form-stack .stack-container ul li:last-child {
+  padding: 0;
+}
+
+.form-stack .stack-container ul li input {
+  border: none;
+  background-color: transparent;
+  color: var(--letter-colors);
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
+}
+
+.form-stack .save-button {
+  width: 100%;
+  padding: .5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  background-color: var(--active-button);
+  border: none;
+  color: var(--letter-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
