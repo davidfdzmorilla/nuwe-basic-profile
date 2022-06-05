@@ -1,10 +1,11 @@
 
 import { useState } from 'react'
+
 import { validateData } from '../../utils/validateData'
 
+import { Switch } from '../switch/Switch'
 
 import '../../style/RegisterForm.css'
-import Switch from '../switch/Switch'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -95,8 +96,6 @@ export const Register = ({ setAction, setRegisterOk }) => {
     })
 
   }
-
-
 
   return (
     <>
@@ -207,4 +206,3 @@ export const Register = ({ setAction, setRegisterOk }) => {
     </>
   )
 }
-

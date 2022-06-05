@@ -6,8 +6,6 @@ import '../../../style/FormData.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
-
-
 export const FormData = ({ user, reload, setReload, userData }) => {
 
   const [form, setForm] = useState({})
@@ -15,10 +13,12 @@ export const FormData = ({ user, reload, setReload, userData }) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+
     if (!form.avatar && !form.professionType && !form.professionLevel && !form.country && !form.city && !form.bio && !form.linkedin && !form.github && !form.gitlab && !form.behance) {
       setModal(null)
       return
     }
+
     const res = await fetch(SERVER_URL + '/users/', {
       method: 'PATCH',
       body: JSON.stringify({ ...form }),
@@ -27,13 +27,13 @@ export const FormData = ({ user, reload, setReload, userData }) => {
         'Content-Type': 'application/json'
       }
     })
+
     if (res.ok) {
       setModal(null)
       setReload(!reload)
     }
+
   }
-
-
 
   const handleChange = ({ target }) => {
     const { name, value } = target
@@ -42,7 +42,6 @@ export const FormData = ({ user, reload, setReload, userData }) => {
       [name]: value
     })
   }
-
 
   return (
     <>
@@ -100,4 +99,5 @@ export const FormData = ({ user, reload, setReload, userData }) => {
       </form>
     </>
   )
+
 }

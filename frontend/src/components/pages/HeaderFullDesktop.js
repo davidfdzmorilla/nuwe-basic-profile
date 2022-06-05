@@ -1,12 +1,13 @@
 
 import { useState } from "react";
+import { useSetUser } from "../../hooks/hooks";
+
 import { FiUser, FiCode } from "react-icons/fi";
 import { MdWork, MdOutlineExitToApp } from "react-icons/md";
 import { RiErrorWarningLine, RiDiscordFill, RiHomeLine } from "react-icons/ri";
 import { BiDownArrow } from "react-icons/bi";
 
 import '../../style/HeaderFullDesktop.css'
-import { useSetUser } from "../../hooks/hooks";
 
 
 export const HeaderFullDesktop = () => {
@@ -17,7 +18,9 @@ export const HeaderFullDesktop = () => {
   const [show, setShow] = useState(false)
 
   const handlePractice = () => {
+
     setShow(!show)
+
     setPracticeItem(
       <>
         <button>Retos</button>
@@ -26,7 +29,6 @@ export const HeaderFullDesktop = () => {
     )
 
   }
-
 
   return (
     <header className='header-full-desktop'>

@@ -1,16 +1,18 @@
+
+import { useState } from 'react';
+import { useSetUser } from '../../hooks/hooks';
+
+import { Navbar } from '../navBar/NavBar';
+import { Logo } from '../logo/Logo';
+
 import { BiExit } from 'react-icons/bi';
 
-import { Logo } from '../logo/Logo';
-import { useSetUser } from '../../hooks/hooks';
-import { useState } from 'react';
-import Navbar from '../navBar/NavBar';
-
 import '../../style/Header.css'
-
 
 export const Header = () => {
 
   const setUser = useSetUser()
+
   const [sidebar, setSidebar] = useState(false)
 
   return (
@@ -19,7 +21,7 @@ export const Header = () => {
       <Navbar sidebar={sidebar} setSidebar={setSidebar} />
       {/* Logo */}
       <Logo />
-      {/* Ajustes */}
+      {/* Salir */}
       <BiExit onClick={() => setUser(null)} />
     </header>
   )

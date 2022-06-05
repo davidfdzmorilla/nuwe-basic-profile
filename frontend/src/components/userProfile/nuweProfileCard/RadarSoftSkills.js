@@ -7,7 +7,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Radar } from 'react-chartjs-2';
+import { Radar } from 'react-chartjs-2'
 
 
 ChartJS.register(
@@ -17,10 +17,7 @@ ChartJS.register(
   Filler,
   Tooltip,
   Legend
-);
-
-
-
+)
 
 export const RadarSoftSkills = () => {
 

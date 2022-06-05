@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 import { useSetModal, useSetUser } from '../../hooks/hooks'
+
 import { Logo } from '../logo/Logo.js'
 import { Register } from './Register'
 
@@ -9,14 +10,16 @@ import '../../style/Login.css'
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 
-function Login() {
+export const Login = () => {
+
+  const setUser = useSetUser()
+  const setModal = useSetModal()
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
   const [action, setAction] = useState('login')
   const [registerOk, setRegisterOk] = useState(null)
-  const setUser = useSetUser()
-  const setModal = useSetModal()
 
 
   const handleSubmit = async e => {
@@ -42,10 +45,7 @@ function Login() {
       setPassword('')
     } else if (res.status === 400) {
       setError(
-        <>
-          <p>Formato de email</p>
-          <p>inválido</p>
-        </>
+        <p>Formato de email inválido</p>
       )
     } else {
       setError(<p>Error !!!</p>)
@@ -81,5 +81,3 @@ function Login() {
     </div>
   )
 }
-
-export default Login

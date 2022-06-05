@@ -6,7 +6,6 @@ import '../../../style/FormHeaderPic.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
-
 export const FormHeaderPic = ({ user, reload, setReload }) => {
 
   const [images, setImages] = useState([])
@@ -18,23 +17,21 @@ export const FormHeaderPic = ({ user, reload, setReload }) => {
   const API_KEY = 'PBUkRF0btDl28l8mjVnxVI0334aVuMYcLyW73MRMsc4'
   const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${query}&client_id=${API_KEY}`
 
-
   useEffect(() => {
+
     const loadData = async () => {
       const res = await fetch(URL)
       const data = await res.json()
       setImages(data)
     }
+
     loadData()
   }
     , [URL, query, page])
 
-
   const handleSubmit = e => {
     e.preventDefault()
   }
-
-
 
   const handleChange = (e) => {
     setQuery(e.target.value)
@@ -42,6 +39,7 @@ export const FormHeaderPic = ({ user, reload, setReload }) => {
   }
 
   const onChangePic = async headerPic => {
+
     const res = await fetch(SERVER_URL + '/users/', {
       method: 'PATCH',
       body: JSON.stringify({ headerPic }),
@@ -50,12 +48,13 @@ export const FormHeaderPic = ({ user, reload, setReload }) => {
         'Content-Type': 'application/json'
       }
     })
+
     if (res.ok) {
       setModal(null)
       setReload(!reload)
     }
-  }
 
+  }
 
   return (
     <article className='form-header-pic'>
@@ -81,4 +80,5 @@ export const FormHeaderPic = ({ user, reload, setReload }) => {
       </div>
     </article>
   )
+
 }

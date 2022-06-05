@@ -1,9 +1,10 @@
+
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaRegWindowClose } from 'react-icons/fa'
 
-import './NavBar.css'
+import '../../style/NavBar.css'
 
-export default function Navbar({ sidebar, setSidebar }) {
+export const Navbar = ({ sidebar, setSidebar }) => {
 
     const toggleSidebar = () => setSidebar(prev => !prev)
 

@@ -1,14 +1,12 @@
 
 import { useState } from 'react'
-
 import { useSetModal } from '../../../hooks/hooks'
-import Switch from '../../switch/Switch'
+
+import { Switch } from '../../switch/Switch'
 
 import '../../../style/FormWorkPref.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
-
-
 
 export const FormWorkPref = ({ user, reload, setReload, userData }) => {
 
@@ -20,11 +18,14 @@ export const FormWorkPref = ({ user, reload, setReload, userData }) => {
   const [inmediateIncorporationSwitch, setInmediateIncorporationSwitch] = useState(userData.inmediateIncorporation)
 
   const handleSubmit = async e => {
+
     e.preventDefault()
+
     if (!form.ubication && !form.typeCompany && !form.minSalary && !form.likeSalary && availabilityToTravelSwitch === userData.availabilityToTravel && remoteWorkSwitch === userData.remoteWork && inmediateIncorporationSwitch === userData.inmediateIncorporation) {
       setModal(null)
       return
     }
+
     const res = await fetch(SERVER_URL + '/users/', {
       method: 'PATCH',
       body: JSON.stringify({
@@ -38,18 +39,22 @@ export const FormWorkPref = ({ user, reload, setReload, userData }) => {
         'Content-Type': 'application/json'
       }
     })
+
     if (res.ok) {
       setModal(null)
       setReload(!reload)
     }
+
   }
 
   const handleChange = (e) => {
+
     const { name, value } = e.target
     setForm({
       ...form,
       [name]: value
     })
+
   }
 
   return (

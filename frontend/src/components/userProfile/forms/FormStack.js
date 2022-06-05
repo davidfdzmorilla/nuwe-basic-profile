@@ -1,11 +1,11 @@
 
 import { useState } from 'react';
-import { BiUpArrow } from "react-icons/bi";
-import { AiFillCloseCircle } from 'react-icons/ai';
 import { useSetModal, useUser } from '../../../hooks/hooks';
 
-const SERVER_URL = process.env.REACT_APP_SERVER_URL
+import { BiUpArrow } from "react-icons/bi";
+import { AiFillCloseCircle } from 'react-icons/ai';
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 export const FormStack = ({ hardSkills, reload, setReload }) => {
 
@@ -57,7 +57,6 @@ export const FormStack = ({ hardSkills, reload, setReload }) => {
     }
   }
 
-
   return (
     <form onSubmit={handleSubmit} className='form-stack'>
       <h3>Stack</h3>
@@ -91,4 +90,5 @@ export const FormStack = ({ hardSkills, reload, setReload }) => {
       <button className='save-button'>Guardar</button>
     </form>
   )
+
 }

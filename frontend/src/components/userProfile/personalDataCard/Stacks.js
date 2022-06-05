@@ -8,7 +8,6 @@ import { FiEdit3, FiCode } from 'react-icons/fi';
 
 import { FormStack } from '../forms/FormStack';
 
-
 export const Stacks = ({ stack, reload, setReload }) => {
 
   const setModal = useSetModal()
@@ -18,7 +17,6 @@ export const Stacks = ({ stack, reload, setReload }) => {
   useEffect(() => {
     stack && setHarrdSkills(stack.split(','))
   }, [stack])
-
 
   const getIcons = (stack, i) => {
     switch (true) {
@@ -66,4 +64,5 @@ export const Stacks = ({ stack, reload, setReload }) => {
       </section>
     </fieldset>
   )
+
 }

@@ -1,7 +1,9 @@
-import { useModal, useSetModal } from '../../hooks/hooks'
-import './Modal.css'
 
-function Modal() {
+import { useModal, useSetModal } from '../../hooks/hooks'
+
+import '../../style/Modal.css'
+
+export const Modal = () => {
   const modal = useModal()
   const setModal = useSetModal()
   const handleClick = () => setModal(null)
@@ -17,5 +19,3 @@ function Modal() {
     </div>
   )
 }
-
-export default Modal

@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import { useSetModal, useSetUser, useUser } from '../../../hooks/hooks';
 
-
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { FiEdit3 } from 'react-icons/fi';
 import { GiPositionMarker } from 'react-icons/gi';
@@ -15,32 +14,31 @@ import '../../../style/PersonalDataComponent.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
-
-
 export const PersonalDataComponent = () => {
 
   const user = useUser()
   const setUser = useSetUser()
-
   const setModal = useSetModal()
 
   const [error, setError] = useState(null)
   const [userData, setUserData] = useState(user)
   const [reload, setReload] = useState(null)
 
-
-
   useEffect(() => {
+
     const loadData = async () => {
+
       try {
         const response = await fetch(SERVER_URL + '/users/profile', {
           headers: {
             'Authorization': 'Bearer ' + user.token
           }
         })
+
         if (response.status === 401) {
           setUser(null)
         }
+
         const data = await response.json()
         setUserData(data)
         setError(null)
@@ -48,11 +46,10 @@ export const PersonalDataComponent = () => {
         setError(error)
       }
     }
+
     loadData()
+
   }, [reload, user])
-
-
-
 
   return (
     <article className='card-personal-data'>
@@ -76,4 +73,5 @@ export const PersonalDataComponent = () => {
       <Stacks stack={userData.stack} reload={reload} setReload={setReload} />
     </article>
   )
+
 }

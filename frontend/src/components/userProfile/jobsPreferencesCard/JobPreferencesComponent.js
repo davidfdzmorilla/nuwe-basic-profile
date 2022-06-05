@@ -9,14 +9,11 @@ import { VscRemoteExplorer } from 'react-icons/vsc';
 import { FiEdit3 } from 'react-icons/fi';
 import { GoCalendar } from 'react-icons/go';
 
-
 import { FormWorkPref } from '../forms/FormWorkPref';
 
 import '../../../style/JobPreferencesComponent.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
-
-
 
 export const JobPreferencesComponent = () => {
 
@@ -28,15 +25,17 @@ export const JobPreferencesComponent = () => {
   const [userData, setUserData] = useState(user)
   const [reload, setReload] = useState(null)
 
-
   useEffect(() => {
+
     const loadData = async () => {
+
       try {
         const response = await fetch(SERVER_URL + '/users/profile', {
           headers: {
             'Authorization': 'Bearer ' + user.token
           }
         })
+
         const data = await response.json()
         setUserData(data)
         setError(null)
@@ -44,9 +43,10 @@ export const JobPreferencesComponent = () => {
         setError(error)
       }
     }
-    loadData()
-  }, [reload, user])
 
+    loadData()
+
+  }, [reload, user])
 
   return (
     <article className='card-job-preferences'>
@@ -93,4 +93,5 @@ export const JobPreferencesComponent = () => {
       </section>
     </article>
   )
+
 }
