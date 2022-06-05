@@ -1,5 +1,4 @@
 
-
 import { useUser } from './hooks/hooks'
 
 import { HeaderFullDesktop } from './components/pages/HeaderFullDesktop'
@@ -10,10 +9,9 @@ import { Main } from './components/pages/Main'
 
 import './style/App.css'
 
-function App() {
+export const App = () => {
 
   const user = useUser()
-
 
   return (
     <div className="App">
@@ -27,6 +25,5 @@ function App() {
       }
     </div>
   )
-}
 
-export default App
+}

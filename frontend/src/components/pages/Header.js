@@ -1,11 +1,11 @@
 
-import { useState } from 'react';
-import { useSetUser } from '../../hooks/hooks';
+import { useState } from 'react'
+import { useSetUser } from '../../hooks/hooks'
 
-import { Navbar } from '../navBar/NavBar';
-import { Logo } from '../logo/Logo';
+import { Navbar } from '../navBar/NavBar'
+import { Logo } from '../logo/Logo'
 
-import { BiExit } from 'react-icons/bi';
+import { BiExit } from 'react-icons/bi'
 
 import '../../style/Header.css'
 

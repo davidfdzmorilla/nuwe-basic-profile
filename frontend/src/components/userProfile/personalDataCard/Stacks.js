@@ -1,12 +1,12 @@
 
-import { useEffect, useState } from 'react';
-import { useSetModal } from '../../../hooks/hooks';
+import { useEffect, useState } from 'react'
+import { useSetModal } from '../../../hooks/hooks'
 
-import { SiCss3, SiSass, SiAngular, SiReact, SiJavascript, SiTypescript, SiPython, SiPhp, SiMysql, SiMongodb, SiAmazonaws } from 'react-icons/si';
-import { IoLogoNodejs } from 'react-icons/io';
-import { FiEdit3, FiCode } from 'react-icons/fi';
+import { SiCss3, SiSass, SiAngular, SiReact, SiJavascript, SiTypescript, SiPython, SiPhp, SiMysql, SiMongodb, SiAmazonaws } from 'react-icons/si'
+import { IoLogoNodejs } from 'react-icons/io'
+import { FiEdit3, FiCode } from 'react-icons/fi'
 
-import { FormStack } from '../forms/FormStack';
+import { FormStack } from '../forms/FormStack'
 
 export const Stacks = ({ stack, reload, setReload }) => {
 

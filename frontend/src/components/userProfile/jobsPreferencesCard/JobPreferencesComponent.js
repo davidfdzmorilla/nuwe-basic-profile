@@ -1,15 +1,15 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 import { useSetModal, useUser } from '../../../hooks/hooks'
 
-import { GiPositionMarker, GiReceiveMoney } from 'react-icons/gi';
-import { MdOutlineHomeWork } from 'react-icons/md';
-import { SiYourtraveldottv } from 'react-icons/si';
-import { VscRemoteExplorer } from 'react-icons/vsc';
-import { FiEdit3 } from 'react-icons/fi';
-import { GoCalendar } from 'react-icons/go';
+import { GiPositionMarker, GiReceiveMoney } from 'react-icons/gi'
+import { MdOutlineHomeWork } from 'react-icons/md'
+import { SiYourtraveldottv } from 'react-icons/si'
+import { VscRemoteExplorer } from 'react-icons/vsc'
+import { FiEdit3 } from 'react-icons/fi'
+import { GoCalendar } from 'react-icons/go'
 
-import { FormWorkPref } from '../forms/FormWorkPref';
+import { FormWorkPref } from '../forms/FormWorkPref'
 
 import '../../../style/JobPreferencesComponent.css'
 

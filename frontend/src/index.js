@@ -4,7 +4,7 @@ import { applyMiddleware, createStore } from 'redux'
 import rootReducer from './reducer/reducer'
 import { Provider } from 'react-redux'
 
-import App from './App'
+import { App } from './App'
 
 import './style/index.css'
 
@@ -20,6 +20,7 @@ const store = createStore(rootReducer, initialStore, applyMiddleware(localStorag
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
+
 root.render(
   <StrictMode>
     <Provider store={store}>

@@ -1,14 +1,14 @@
 
-import { useEffect, useState } from 'react';
-import { useSetModal, useSetUser, useUser } from '../../../hooks/hooks';
+import { useEffect, useState } from 'react'
+import { useSetModal, useSetUser, useUser } from '../../../hooks/hooks'
 
-import { BsLinkedin, BsGithub } from 'react-icons/bs';
-import { FiEdit3 } from 'react-icons/fi';
-import { GiPositionMarker } from 'react-icons/gi';
+import { BsLinkedin, BsGithub } from 'react-icons/bs'
+import { FiEdit3 } from 'react-icons/fi'
+import { GiPositionMarker } from 'react-icons/gi'
 
-import { FormData } from '../forms/FormData';
-import { FormHeaderPic } from '../forms/FormHeaderPic';
-import { Stacks } from './Stacks';
+import { FormData } from '../forms/FormData'
+import { FormHeaderPic } from '../forms/FormHeaderPic'
+import { Stacks } from './Stacks'
 
 import '../../../style/PersonalDataComponent.css'
 

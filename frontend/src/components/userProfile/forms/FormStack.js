@@ -1,9 +1,9 @@
 
-import { useState } from 'react';
-import { useSetModal, useUser } from '../../../hooks/hooks';
+import { useState } from 'react'
+import { useSetModal, useUser } from '../../../hooks/hooks'
 
-import { BiUpArrow } from "react-icons/bi";
-import { AiFillCloseCircle } from 'react-icons/ai';
+import { BiUpArrow } from "react-icons/bi"
+import { AiFillCloseCircle } from 'react-icons/ai'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 

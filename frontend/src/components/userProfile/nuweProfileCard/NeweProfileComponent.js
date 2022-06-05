@@ -1,8 +1,8 @@
 
-import { useState } from 'react';
+import { useState } from 'react'
 
-import { RadarHardSkills } from './RadarHardSkills';
-import { RadarSoftSkills } from './RadarSoftSkills';
+import { RadarHardSkills } from './RadarHardSkills'
+import { RadarSoftSkills } from './RadarSoftSkills'
 
 import '../../../style/NeweProfileComponent.css'
 
