@@ -1,13 +1,15 @@
 
+import { useEffect, useState } from 'react';
+import { useSetModal } from '../../../hooks/hooks';
+
 import { SiCss3, SiSass, SiAngular, SiReact, SiJavascript, SiTypescript, SiPython, SiPhp, SiMysql, SiMongodb, SiAmazonaws } from 'react-icons/si';
 import { IoLogoNodejs } from 'react-icons/io';
 import { FiEdit3, FiCode } from 'react-icons/fi';
-import { useSetModal } from '../../hooks/hooks';
-import { FormStack } from './FormStack';
-import { useEffect, useState } from 'react';
+
+import { FormStack } from '../forms/FormStack';
 
 
-export const Stacks = ({ stack }) => {
+export const Stacks = ({ stack, reload, setReload }) => {
 
   const setModal = useSetModal()
 
@@ -40,7 +42,7 @@ export const Stacks = ({ stack }) => {
         return <SiMysql className='stack-item' key={i} />
       case stack === 'mongodb':
         return <SiMongodb className='stack-item' key={i} />
-      case stack === 'aws':
+      case stack === 'amazonaws':
         return <SiAmazonaws className='stack-item' key={i} />
       case stack === 'nodejs':
         return <IoLogoNodejs className='stack-item' key={i} />
@@ -55,7 +57,7 @@ export const Stacks = ({ stack }) => {
     <fieldset>
       <legend>Stack</legend>
       <section className='stack-container'>
-        <FiEdit3 className='pencil-icon' onClick={() => setModal(<FormStack hardSkills={hardSkills} />)} />
+        <FiEdit3 className='pencil-icon' onClick={() => setModal(<FormStack hardSkills={hardSkills} reload={reload} setReload={setReload} />)} />
         {hardSkills?.map((skill, i) => {
           return (
             getIcons(skill, i)

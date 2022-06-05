@@ -1,5 +1,6 @@
 
-import { useSetModal, useUser } from '../../hooks/hooks'
+import { useEffect, useState } from 'react';
+import { useSetModal, useUser } from '../../../hooks/hooks'
 
 import { GiPositionMarker, GiReceiveMoney } from 'react-icons/gi';
 import { MdOutlineHomeWork } from 'react-icons/md';
@@ -9,9 +10,9 @@ import { FiEdit3 } from 'react-icons/fi';
 import { GoCalendar } from 'react-icons/go';
 
 
-import '../../style/JobPreferencesComponent.css'
-import { FormWorkPref } from './FormWorkPref';
-import { useEffect, useState } from 'react';
+import { FormWorkPref } from '../forms/FormWorkPref';
+
+import '../../../style/JobPreferencesComponent.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 

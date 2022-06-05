@@ -1,10 +1,9 @@
-import { HiMenuAlt2 } from 'react-icons/hi';
 import { BiExit } from 'react-icons/bi';
 
-import { Logo } from '../Logo/Logo';
+import { Logo } from '../logo/Logo';
 import { useSetUser } from '../../hooks/hooks';
 import { useState } from 'react';
-import Navbar from './NavBar';
+import Navbar from '../navBar/NavBar';
 
 import '../../style/Header.css'
 

@@ -2,13 +2,13 @@
 
 import { useUser } from './hooks/hooks'
 
-import { HeaderFullDesktop } from './components/userProfile/HeaderFullDesktop'
+import { HeaderFullDesktop } from './components/pages/HeaderFullDesktop'
 import Login from './components/auth/Login'
-import { Header } from './components/userProfile/Header'
+import { Header } from './components/pages/Header'
 import Modal from './components/modal/Modal'
-import { Main } from './components/userProfile/Main'
+import { Main } from './components/pages/Main'
 
-import './App.css'
+import './style/App.css'
 
 function App() {
 

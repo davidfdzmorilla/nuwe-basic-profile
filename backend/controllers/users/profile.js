@@ -11,7 +11,7 @@ const profile = async (req, res) => {
         res.send({ error: error.message })
         return
     }
-    console.log(user)
+
     try {
         if (!user) throw new Error('User not found')
         res.status(202)

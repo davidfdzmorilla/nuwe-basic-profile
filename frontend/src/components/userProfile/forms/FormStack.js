@@ -1,19 +1,24 @@
 
 import { useState } from 'react';
+import { BiUpArrow } from "react-icons/bi";
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { useSetModal, useUser } from '../../../hooks/hooks';
+
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 
+export const FormStack = ({ hardSkills, reload, setReload }) => {
 
-export const FormStack = ({ hardSkills }) => {
+  const skillsItems = ['css3', 'sass', 'angular', 'nodejs', 'react', 'javascript', 'typescript', 'python', 'php', 'mysql', 'mongodb', 'amazonaws']
 
+  const setModal = useSetModal()
+  const user = useUser()
   const [skillSearch, setSkillSearch] = useState(null)
   const [newSkills, setNewSkills] = useState([...hardSkills])
-  console.log(newSkills)
 
-  const skillsItems = ['css3', 'sass', 'angular', 'react', 'javascript', 'typescript', 'python', 'php', 'mysql', 'mongodb', 'amazonaws']
 
-  const searchRes = skillsItems.filter((name) => {
-    let finalRes = name.toLowerCase()
+  let searchRes = skillsItems.filter((skill) => {
+    let finalRes = skill.toLowerCase()
     return finalRes.includes(skillSearch)
   })
 
@@ -27,13 +32,34 @@ export const FormStack = ({ hardSkills }) => {
 
   const handleRemove = i => {
 
-    // setNewSkills(newSkills.splice(i, newSkills.length - 1))
+    setNewSkills(newSkills.filter((skill, index) => index !== i))
 
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    const stack = newSkills.toString()
+    if (!stack) {
+      setModal(null)
+      return
+    }
+    const res = await fetch(SERVER_URL + '/users/', {
+      method: 'PATCH',
+      body: JSON.stringify({ stack }),
+      headers: {
+        'Authorization': 'Bearer ' + user.token,
+        'Content-Type': 'application/json'
+      }
+    })
+    if (res.ok) {
+      setModal(null)
+      setReload(!reload)
+    }
   }
 
 
   return (
-    <form className='form-stack'>
+    <form onSubmit={handleSubmit} className='form-stack'>
       <h3>Stack</h3>
       <p>Aquí podrás definir tu stack de hard skills con las habilidades que utilizas frecuentemente.</p>
       <article className='stack-container'>
@@ -59,6 +85,7 @@ export const FormStack = ({ hardSkills }) => {
           <li>
             <input type='text' name='newSkill' onChange={handleChange} placeholder='Introduce nueva skill...' />
           </li>
+          <BiUpArrow onClick={() => console.log('')} className='down-arrow' />
         </ul>
       </article>
       <button className='save-button'>Guardar</button>

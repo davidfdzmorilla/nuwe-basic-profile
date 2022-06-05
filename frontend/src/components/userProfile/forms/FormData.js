@@ -1,8 +1,8 @@
 
 import { useState } from 'react'
-import { useSetModal } from '../../hooks/hooks'
+import { useSetModal } from '../../../hooks/hooks'
 
-import '../../style/FormData.css'
+import '../../../style/FormData.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 

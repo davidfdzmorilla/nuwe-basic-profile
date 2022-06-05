@@ -1,13 +1,17 @@
+
 import { useEffect, useState } from 'react';
+import { useSetModal, useSetUser, useUser } from '../../../hooks/hooks';
+
+
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { FiEdit3 } from 'react-icons/fi';
 import { GiPositionMarker } from 'react-icons/gi';
-import { useSetModal, useSetUser, useUser } from '../../hooks/hooks';
 
-import '../../style/PersonalDataComponent.css'
-import { FormData } from './FormData';
-import { FormHeaderPic } from './FormHeaderPic';
+import { FormData } from '../forms/FormData';
+import { FormHeaderPic } from '../forms/FormHeaderPic';
 import { Stacks } from './Stacks';
+
+import '../../../style/PersonalDataComponent.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -69,7 +73,7 @@ export const PersonalDataComponent = () => {
           <a href={userData.github} target='_blank' rel='noreferrer nopener'><BsGithub /></a>
         </div>
       </section>
-      <Stacks stack={userData.stack} />
+      <Stacks stack={userData.stack} reload={reload} setReload={setReload} />
     </article>
   )
 }

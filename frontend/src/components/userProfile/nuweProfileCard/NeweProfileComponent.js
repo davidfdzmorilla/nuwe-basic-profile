@@ -2,11 +2,10 @@
 import { useState } from 'react';
 import React from 'react';
 
-import '../../style/NeweProfileComponent.css'
 import { RadarHardSkills } from './RadarHardSkills';
 import { RadarSoftSkills } from './RadarSoftSkills';
-import { useUser } from '../../hooks/hooks';
 
+import '../../../style/NeweProfileComponent.css'
 
 
 export const NeweProfileComponent = () => {

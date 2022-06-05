@@ -1,9 +1,10 @@
 
 import { useState } from 'react'
-import { useSetModal } from '../../hooks/hooks'
-import Switch from '../switch/Switch'
 
-import '../../style/FormWorkPref.css'
+import { useSetModal } from '../../../hooks/hooks'
+import Switch from '../../switch/Switch'
+
+import '../../../style/FormWorkPref.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 

@@ -2,8 +2,8 @@ const connection = require('../mysqlConnection')
 
 const updateUser = async (newUserData) => {
 
-    let { userId, headerPic, avatar, professionType, professionLevel, bio, country, city, linkedin, gitHub, gitLab, behance, ubication, typeCompany, minSalary, likeSalary, availabilityToTravel, remoteWork, inmediateIncorporation } = newUserData
-    if (!avatar && !headerPic && !professionType && !professionLevel && !bio && !country && !city && !linkedin && !gitHub && !gitLab && !behance && !ubication && !typeCompany && !minSalary && !likeSalary && (availabilityToTravel !== true || availabilityToTravel !== false) && inmediateIncorporation === null && remoteWork === null) return
+    let { userId, headerPic, avatar, professionType, professionLevel, bio, country, city, linkedin, gitHub, gitLab, behance, ubication, typeCompany, minSalary, likeSalary, availabilityToTravel, remoteWork, inmediateIncorporation, stack } = newUserData
+    if (!avatar && !headerPic && !professionType && !professionLevel && !bio && !country && !city && !linkedin && !gitHub && !gitLab && !behance && !ubication && !typeCompany && !minSalary && !likeSalary && (availabilityToTravel !== true || availabilityToTravel !== false) && inmediateIncorporation === null && remoteWork === null && !stack) return
     let query = 'UPDATE users SET'
     const params = []
 
@@ -41,6 +41,11 @@ const updateUser = async (newUserData) => {
         if (params.length > 0) query += ','
         query += ' city = ?'
         params.push(city)
+    }
+    if (stack) {
+        if (params.length > 0) query += ','
+        query += ' stack = ?'
+        params.push(stack)
     }
     if (linkedin) {
         if (params.length > 0) query += ','
