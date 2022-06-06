@@ -4,8 +4,7 @@ import '../../../style/FormTimelineCv.css'
 
 export const FormTimelineCv = () => {
   return (
-    <form className='
-    '>
+    <form className='form-timeline'>
       <input type='text' placeholder='Título*' />
       <input type='text' placeholder='Enlace(No requerido)' />
       <textarea placeholder='Descripción*' />

@@ -41,8 +41,6 @@ const login = async (req, res) => {
 
   res.status(200)
   res.send({
-    ...user,
-    password: '',
     token: token
   })
 }
