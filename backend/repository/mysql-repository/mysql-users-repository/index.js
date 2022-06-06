@@ -3,6 +3,7 @@ const updateUser = require('./updateUser')
 const getUserByEmail = require('./getUserByEmail')
 const getUserById = require('./getUserById')
 const saveUserProject = require('./saveUserProject')
+const getUserProjects = require('./getUserProjects')
 
 
 
@@ -12,5 +13,7 @@ module.exports = {
     getUserById,
     getUserByEmail,
     saveUserProject,
-    saveUserProject
+    saveUserProject,
+    getUserProjects,
+    getUserProjects
 }

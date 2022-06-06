@@ -90,7 +90,7 @@
 
 
 
-.newe-profile-container .add-experience-button {
+.newe-profile-container .timeline-container .add-experience-button {
   width: 30%;
   max-width: 400px;
   margin: auto;
@@ -103,4 +103,30 @@
   border: none;
   border-radius: 10px;
   text-align: center;
+}
+
+.newe-profile-container .timeline-container .projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+}
+
+.newe-profile-container .timeline-container .projects-container .project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  width: 45%;
+  background-color: var(--active-button);
+  color: black;
+  border-radius: 10px;
+}
+
+.newe-profile-container .timeline-container .projects-container .project-card:nth-child(odd) {
+  align-self: flex-start;
+}
+
+.newe-profile-container .timeline-container .projects-container .project-card:nth-child(even) {
+  align-self: flex-end;
 }
