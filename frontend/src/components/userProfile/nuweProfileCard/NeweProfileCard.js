@@ -1,21 +1,15 @@
 
 import { useState } from 'react'
 
-import { RadarHardSkills } from './RadarHardSkills'
-import { RadarSoftSkills } from './RadarSoftSkills'
+import { NuweProfileComponent } from './NuweProfileComponent'
 
-import '../../../style/NeweProfileComponent.css'
+import '../../../style/NuweProfileCard.css'
+import { TimelinCvComponent } from './TimelinCvComponent'
 
+export const NuweProfileCard = () => {
 
-export const NeweProfileComponent = () => {
-
-  const timeLineData = <button className='add-experience-button'>AÑADIR EXPERIENCIA</button>
-  const nuweProfile = <article className='card-newe-profile'>
-    {/* CARD RADAR HARD SKILLS */}
-    <RadarHardSkills />
-    {/* CARD RADAR SOFT SKILLS*/}
-    <RadarSoftSkills />
-  </article>
+  const timeLineData = <TimelinCvComponent />
+  const nuweProfile = <NuweProfileComponent />
 
   const [type, setType] = useState('profile')
   const [card, setCard] = useState(nuweProfile)

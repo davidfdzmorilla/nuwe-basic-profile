@@ -1,6 +1,6 @@
 
 import { JobPreferencesComponent } from '../userProfile/jobsPreferencesCard/JobPreferencesComponent'
-import { NeweProfileComponent } from '../userProfile/nuweProfileCard/NeweProfileComponent'
+import { NuweProfileCard } from '../userProfile/nuweProfileCard/NeweProfileCard'
 import { PersonalDataComponent } from '../userProfile/personalDataCard/PersonalDataComponent'
 
 export const Main = () => {
@@ -12,7 +12,7 @@ export const Main = () => {
       {/* Card preferencias laborales */}
       <JobPreferencesComponent />
       {/* Card perfil Newe */}
-      <NeweProfileComponent />
+      <NuweProfileCard />
     </main>
   )
 

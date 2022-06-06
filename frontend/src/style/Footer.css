@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  padding: 2rem 0;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--letter-color);
+}
+
+.footer section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-size: 2rem;
+}

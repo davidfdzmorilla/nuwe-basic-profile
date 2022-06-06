@@ -1,0 +1,24 @@
+[
+  {
+    "headerPic": "https://images.unsplash.com/photo-1564865878688-9a244444042a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzMzNDB8MHwxfHNlYXJjaHwxfHxjb2RlfGVufDB8fHx8MTY1MzkwNjIwMA&ixlib=rb-1.2.1&q=80",
+    "avatar": "https://gravatar.com/avatar/4393a3fdbb71f970b17ded7b8e929cd1?s=400&d=robohash&r=x",
+    "name": "Sr Robot",
+    "tel": "765432112",
+    "professionType": "Robot de montaje",
+    "professionLevel": "Senior",
+    "bio": "Al ser un androide de protocolo, fui diseñado para interactuar con seres vivos pensantes, androides y máquinas. Soy capaz de comunicarme con más de cien millones de formas de vida. Fui construido por Anakin Skywalker en el planeta Tatooine, para ayudar en las tareas del hogar a su madre. Soy el mejor amigo, compañero, y contraparte del Droide astromecánico R2-D2.Mi principal función como androide de protocolo es ayudar a explicar las costumbres de otras culturas, la traducción y la comunicación en general. Desde mi creación  he sevido a más de cuarenta amos diferentes.",
+    "country": "España",
+    "city": "Pontevedra",
+    "linkedin": "https://linkedin.com/",
+    "gitHub": "https://github.com/",
+    "gitLab": "https://gitlab.com/",
+    "behance": "https://www.behance.net/",
+    "ubication": "Barcelona",
+    "typeCompany": "Startup",
+    "minSalary": 40000,
+    "likeSalary": 45000,
+    "availabilityToTravel": true,
+    "remoteWork": true,
+    "inmediateIncorporation": true
+  }
+]

@@ -70,10 +70,10 @@ export const Login = () => {
             {error && <div className="error">{error}</div>}
           </form>
           {!registerOk ?
-            <>
+            <div>
               <p>¿No estás registrado?</p>
               <button onClick={() => setAction('register')} className='entrar-button'>Regístrate</button>
-            </> :
+            </div> :
             <p className='register-ok'>{registerOk}</p>
           }
         </>

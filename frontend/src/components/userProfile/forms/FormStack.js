@@ -9,7 +9,7 @@ const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 export const FormStack = ({ hardSkills, reload, setReload }) => {
 
-  const skillsItems = ['css3', 'sass', 'angular', 'nodejs', 'react', 'javascript', 'typescript', 'python', 'php', 'mysql', 'mongodb', 'amazonaws']
+  const skillsItemsDefect = ['css3', 'sass', 'angular', 'nodejs', 'react', 'javascript', 'typescript', 'python', 'php', 'mysql', 'mongodb', 'amazonaws']
 
   const setModal = useSetModal()
   const user = useUser()
@@ -17,23 +17,18 @@ export const FormStack = ({ hardSkills, reload, setReload }) => {
   const [newSkills, setNewSkills] = useState([...hardSkills])
 
 
-  let searchRes = skillsItems.filter((skill) => {
+  let searchRes = skillsItemsDefect.filter((skill) => {
     let finalRes = skill.toLowerCase()
     return finalRes.includes(skillSearch)
   })
 
   const handleChange = ({ target }) => {
-
     const { value } = target
-
     setSkillSearch(value)
-
   }
 
   const handleRemove = i => {
-
     setNewSkills(newSkills.filter((skill, index) => index !== i))
-
   }
 
   const handleSubmit = async e => {
@@ -84,7 +79,6 @@ export const FormStack = ({ hardSkills, reload, setReload }) => {
           <li>
             <input type='text' name='newSkill' onChange={handleChange} placeholder='Introduce nueva skill...' />
           </li>
-          <BiUpArrow onClick={() => console.log('')} className='down-arrow' />
         </ul>
       </article>
       <button className='save-button'>Guardar</button>

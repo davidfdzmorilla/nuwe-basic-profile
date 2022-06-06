@@ -2,6 +2,8 @@
 import { useUser } from './hooks/hooks'
 
 import { HeaderFullDesktop } from './components/pages/HeaderFullDesktop'
+import { Footer } from './components/pages/Footer'
+
 import { Login } from './components/auth/Login'
 import { Header } from './components/pages/Header'
 import { Modal } from './components/modal/Modal'
@@ -23,6 +25,7 @@ export const App = () => {
           <Main />
         </>
       }
+      <Footer />
     </div>
   )
 

@@ -91,9 +91,16 @@
 
 
 .newe-profile-container .add-experience-button {
-  width: 80%;
+  width: 30%;
   max-width: 400px;
   margin: auto;
-  padding: .5rem 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
   cursor: pointer;
+  background-color: var(--active-button);
+  color: var(--letter-color);
+  border: none;
+  border-radius: 10px;
+  text-align: center;
 }

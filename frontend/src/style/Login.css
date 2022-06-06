@@ -2,8 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   margin-top: 2rem;
   gap: 4rem;
+  flex-grow: 1;
 }
 
 .login label {
@@ -37,7 +39,7 @@ form.login input {
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  margin-bottom: 0.5rem;
+  margin: 1rem 0 0.5rem;
   box-shadow: 1px 1px 3px;
   transition: all 300ms;
 }

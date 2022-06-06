@@ -7,6 +7,8 @@ import { Switch } from '../switch/Switch'
 
 import '../../style/RegisterForm.css'
 
+import userTest from '../../data/userTest.json'
+
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 
@@ -40,7 +42,9 @@ export const Register = ({ setAction, setRegisterOk }) => {
 
   const headerPic = 'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzMzNDB8MHwxfHNlYXJjaHwyfHxjb2RlfGVufDB8fHx8MTY1NDE4NTQxOA&ixlib=rb-1.2.1&q=80'
 
-  const [form, setForm] = useState(defaultForm)
+  const userTestData = userTest[0]
+
+  const [form, setForm] = useState(userTestData)
   const [availabilityToTravelSwitch, setAvailabilityToTravelSwitch] = useState(false)
   const [remoteWorkSwitch, setRemoteWorkSwitch] = useState(false)
   const [inmediateIncorporationSwitch, setInmediateIncorporationSwitch] = useState(false)
@@ -49,6 +53,7 @@ export const Register = ({ setAction, setRegisterOk }) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+    console.log(form)
     const { headerPic, avatar, name, email, password, tel, professionType, professionLevel, bio, country, city, linkedin, gitHub, gitLab, behance, ubication, typeCompany, minSalary, likeSalary, availabilityToTravel, remoteWork, inmediateIncorporation } = form
 
     if (!headerPic && !avatar && !name && !email && !password && !tel && !professionType && !professionLevel && !bio && !country && !city && !linkedin && !gitHub && !gitLab && !behance && !ubication && !typeCompany && !minSalary && !likeSalary && !availabilityToTravel && !remoteWork && !inmediateIncorporation) return
@@ -99,18 +104,9 @@ export const Register = ({ setAction, setRegisterOk }) => {
 
   return (
     <>
-      <h2>Introduce tus datos</h2>
+      <h2>Introduce tus datos o con datos por defecto. Debes introducir email, contraseña y clickar en enviar con datos de test.</h2>
       <form onSubmit={handleSubmit} className='register-form'>
         <section className='inputs-container'>
-          <fieldset>
-            <legend>Url avatar</legend>
-            <input id='url' onChange={handleChange} type='url' name='avatar' placeholder='Introduce URL...' required />
-          </fieldset>
-          <fieldset>
-            <legend>Nombre</legend>
-            <input id='text' min={4} max={20} onChange={handleChange} type='text' name='name' placeholder='Introduce nombre...' required />
-            {errorType === 'name' && <p className='error-text'>{errorText}</p>}
-          </fieldset>
           <fieldset>
             <legend>Email</legend>
             <input id='email' onChange={handleChange} type='email' name='email' placeholder='Introduce email...' required />
@@ -119,6 +115,15 @@ export const Register = ({ setAction, setRegisterOk }) => {
           <fieldset>
             <legend>Password</legend>
             <input min={6} max={20} onChange={handleChange} type='password' name='password' placeholder='Introduce password...' required />
+          </fieldset>
+          <fieldset>
+            <legend>Url avatar</legend>
+            <input id='url' onChange={handleChange} type='url' name='avatar' placeholder='Introduce URL...' required />
+          </fieldset>
+          <fieldset>
+            <legend>Nombre</legend>
+            <input id='text' min={4} max={20} onChange={handleChange} type='text' name='name' placeholder='Introduce nombre...' required />
+            {errorType === 'name' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Teléfono</legend>
@@ -203,6 +208,7 @@ export const Register = ({ setAction, setRegisterOk }) => {
           <button onClick={() => setAction('login')}>Salir</button>
         </div>
       </form>
+      <button className='insert-data-demo-button' onClick={handleSubmit}>Enviar con datos de test</button>
     </>
   )
 }

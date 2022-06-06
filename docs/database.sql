@@ -22,7 +22,7 @@ CREATE TABLE users
 	github VARCHAR (255) NOT NULL,
 	gitlab VARCHAR (255) NOT NULL,
 	behance VARCHAR (255) NOT NULL,
-	stack VARCHAR (255) NOT NULL DEFAULT "demo, demo, demo ",
+	stack VARCHAR (255) NOT NULL DEFAULT "demo,demo,demo",
 	ubication VARCHAR (255) NOT NULL,
 	type_company VARCHAR (255) NOT NULL,
 	min_salary INT (255) NOT NULL,
@@ -30,4 +30,15 @@ CREATE TABLE users
 	availability_to_travel BOOLEAN NOT NULL DEFAULT false,
 	remote_work BOOLEAN NOT NULL DEFAULT false,
 	inmediate_incorporation BOOLEAN NOT NULL DEFAULT false
+);
+
+DROP TABLE IF EXISTS users_projects;
+CREATE TABLE users_projects
+(
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	title VARCHAR (255) NOT NULL,
+	description VARCHAR (255) NOT NULL,
+	link VARCHAR (255) NOT NULL,
+	id_user INT UNSIGNED NOT NULL,
+	FOREIGN KEY (id_user) REFERENCES users (id) ON DELETE CASCADE
 );

@@ -67,7 +67,8 @@
   margin-top: 2rem;
 }
 
-.register-form .buttons-container button {
+.register-form .buttons-container button,
+.insert-data-demo-button {
   width: 400px;
   padding: .7rem 1rem;
   font-weight: bolder;
@@ -79,7 +80,8 @@
   transition: all 300ms;
 }
 
-.register-form button:hover {
+.register-form .buttons-container button:hover,
+.insert-data-demo-button {
   background-color: var(--active-button);
 }
 
