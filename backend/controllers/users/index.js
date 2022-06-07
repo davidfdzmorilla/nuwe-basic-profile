@@ -4,6 +4,7 @@ const profile = require('./profile')
 const editProfile = require('./editProfile')
 const getProjects = require('./getProjects')
 const createProject = require('./createProject')
+const deleteProject = require('./deleteProject')
 
 
 
@@ -13,5 +14,6 @@ module.exports = {
     profile,
     editProfile,
     getProjects,
-    createProject
+    createProject,
+    deleteProject
 }
