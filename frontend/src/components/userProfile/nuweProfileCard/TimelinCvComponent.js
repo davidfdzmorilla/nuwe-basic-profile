@@ -3,6 +3,9 @@ import { useEffect, useState } from "react"
 import { useSetModal, useUser } from "../../../hooks/hooks"
 import { FormTimelineCv } from "../forms/FormTimelineCv"
 
+import { CgTrash } from 'react-icons/cg';
+import { MdModeEditOutline } from 'react-icons/md';
+
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 
@@ -14,8 +17,7 @@ export const TimelinCvComponent = () => {
   const setModal = useSetModal()
   const [userProjects, setUserProjects] = useState([])
   const [error, setError] = useState(null)
-
-  console.log(userProjects)
+  const [reload, setReload] = useState(false)
 
   useEffect(() => {
     const loadData = async () => {
@@ -34,19 +36,25 @@ export const TimelinCvComponent = () => {
       }
     }
     loadData()
-  }, [])
+  }, [reload, user])
 
 
   return (
     <section className='timeline-container'>
-      <button onClick={() => setModal(<FormTimelineCv />)} className='add-experience-button'>AÑADIR EXPERIENCIA</button>
+      <button onClick={() => setModal(<FormTimelineCv user={user} reload={reload} setReload={setReload} />)} className='add-experience-button'>AÑADIR EXPERIENCIA</button>
       <div className="projects-container">
         {userProjects.length > 0 && userProjects.map(({ id, title, link, description }) => {
           return (
             <article className="project-card" key={id}>
-              <h3>{title}</h3>
-              <p>{description}</p>
-              <a href={link} target='_blank' rel='noreferrer nopener'>{link}</a>
+              <div className="data-container">
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <a href={link} target='_blank' rel='noreferrer nopener'>{link}</a>
+              </div>
+              <div className="buttons-container">
+                <button><CgTrash /></button>
+                <button><MdModeEditOutline /></button>
+              </div>
             </article>
           )
         })}

@@ -6,7 +6,10 @@ const { usersRepository } = require('../../repository')
 const createProject = async (req, res) => {
 
     const userId = req.user.id
-    const newProject = req.body
+    let newProject = req.body
+
+
+    if (newProject.link === '') newProject = { title: newProject.title, description: newProject.description }
 
     try {
         await projectValidator.validateAsync(newProject)
