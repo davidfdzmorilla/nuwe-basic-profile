@@ -6,6 +6,7 @@ const saveUserProject = require('./saveUserProject')
 const getUserProjects = require('./getUserProjects')
 const getUserProjectById = require('./getUserProjectById')
 const removeUserProject = require('./removeUserProject')
+const updateUserProject = require('./updateUserProject')
 
 
 
@@ -19,5 +20,6 @@ module.exports = {
     getUserProjects,
     getUserProjects,
     getUserProjectById,
-    removeUserProject
+    removeUserProject,
+    updateUserProject
 }

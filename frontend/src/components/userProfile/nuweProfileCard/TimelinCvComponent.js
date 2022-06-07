@@ -6,6 +6,7 @@ import { FormTimelineCv } from "../forms/FormTimelineCv"
 import { CgTrash } from 'react-icons/cg';
 import { MdModeEditOutline } from 'react-icons/md';
 import { FormDeleteProject } from "../forms/FormDeleteProject";
+import { FormEditProject } from "../forms/FormEditProject";
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -44,7 +45,7 @@ export const TimelinCvComponent = () => {
     <section className='timeline-container'>
       <button onClick={() => setModal(<FormTimelineCv user={user} reload={reload} setReload={setReload} />)} className='add-experience-button'>AÑADIR EXPERIENCIA</button>
       <div className="projects-container">
-        {userProjects.length > 0 && userProjects.map(({ id, title, link, description }) => {
+        {userProjects.length > 0 && userProjects.map(({ id, title, link, description }, project) => {
           return (
             <article className="project-card" key={id}>
               <div className="data-container">
@@ -54,7 +55,7 @@ export const TimelinCvComponent = () => {
               </div>
               <div className="buttons-container">
                 <button><CgTrash onClick={() => setModal(<FormDeleteProject title={title} id={id} reload={reload} setReload={setReload} />)} /></button>
-                <button><MdModeEditOutline onClick={() => setModal('Editar')} /></button>
+                <button><MdModeEditOutline onClick={() => setModal(<FormEditProject id={id} title={title} link={link} description={description} />)} /></button>
               </div>
             </article>
           )
