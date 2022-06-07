@@ -56,25 +56,25 @@ export const FormData = ({ user, reload, setReload, userData }) => {
         <section className='data-container'>
           <fieldset>
             <legend>Especialidad</legend>
-            <input onChange={handleChange} name='professionType' type='text' placeholder={userData.professionType} />
+            <input maxLength={50} minLength={2} onChange={handleChange} name='professionType' type='text' placeholder={userData.professionType} />
           </fieldset>
           <fieldset>
             <legend>Nivel</legend>
-            <input onChange={handleChange} name='professionLevel' type='text' placeholder={userData.professionLevel} />
+            <input minLength={2} maxLength={50} onChange={handleChange} name='professionLevel' type='text' placeholder={userData.professionLevel} />
           </fieldset>
           <fieldset>
             <legend>País</legend>
-            <input onChange={handleChange} name='country' type='text' placeholder={userData.country} />
+            <input minLength={2} maxLength={50} onChange={handleChange} name='country' type='text' placeholder={userData.country} />
           </fieldset>
           <fieldset>
             <legend>Ciudad</legend>
-            <input onChange={handleChange} name='city' type='text' placeholder={userData.city} />
+            <input minLength={2} maxLength={50} onChange={handleChange} name='city' type='text' placeholder={userData.city} />
           </fieldset>
         </section>
         <p>Aquí podrás añadir información personal que creas relevante. Comentanos quién eres, que cosas te gustan, etc.</p>
         <fieldset>
           <legend>Bio</legend>
-          <textarea onChange={handleChange} name='bio' type='text' placeholder={userData.bio} />
+          <textarea minLength={10} maxLength={600} onChange={handleChange} name='bio' type='text' placeholder={userData.bio} />
         </fieldset>
         <p>URL de tus redes sociales</p>
         <section className='social-container'>

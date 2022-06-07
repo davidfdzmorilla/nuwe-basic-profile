@@ -55,7 +55,7 @@ export const TimelinCvComponent = () => {
               </div>
               <div className="buttons-container">
                 <button><CgTrash onClick={() => setModal(<FormDeleteProject title={title} id={id} reload={reload} setReload={setReload} />)} /></button>
-                <button><MdModeEditOutline onClick={() => setModal(<FormEditProject id={id} title={title} link={link} description={description} />)} /></button>
+                <button><MdModeEditOutline onClick={() => setModal(<FormEditProject id={id} title={title} link={link} description={description} reload={reload} setReload={setReload} />)} /></button>
               </div>
             </article>
           )

@@ -110,7 +110,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 20% 2rem 2rem;
+  padding: 20% 0;
   box-sizing: border-box;
 }
 
@@ -123,6 +123,7 @@
   width: 35%;
   margin-top: -10%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .newe-profile-container .timeline-container .projects-container .project-card .data-container {
@@ -135,6 +136,7 @@
   color: var(--letter-color);
   border-radius: 10px;
   border: 2px solid var(--line-color);
+  box-sizing: border-box;
 }
 
 .newe-profile-container .timeline-container .projects-container .project-card .data-container p {
@@ -159,7 +161,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 .newe-profile-container .timeline-container .projects-container .project-card h3,
@@ -179,10 +180,11 @@
     width: 90%;
     border-radius: 10px;
     margin-top: 0;
+    margin-left: 0;
   }
 
   .newe-profile-container .timeline-container .projects-container .project-card:nth-child(odd) {
-    align-self: center;
+    margin-right: 50px;
   }
 
   .newe-profile-container .timeline-container .projects-container .project-card:nth-child(even) {

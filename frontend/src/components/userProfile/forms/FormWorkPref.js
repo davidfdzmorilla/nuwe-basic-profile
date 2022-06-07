@@ -60,16 +60,13 @@ export const FormWorkPref = ({ user, reload, setReload, userData }) => {
   return (
     <>
       <form name='ubication' className='form-work-preferences' onSubmit={handleSubmit}>
-        <h3>Indicanos si estás abierto a ofertas de trabajo</h3>
-        <Switch on={true} />
-        <p>Sí, estoy abierto a ofertas de trabajo</p>
         <fieldset>
           <legend>Donde quieres trabajar</legend>
-          <input name='ubication' onChange={handleChange} type='text' placeholder={userData.ubication} />
+          <input minLength={2} maxLength={50} name='ubication' onChange={handleChange} type='text' placeholder={userData.ubication} />
         </fieldset>
         <fieldset>
           <legend>Tipo de empresa</legend>
-          <input name='typeCompany' onChange={handleChange} type='text' placeholder={userData.typeCompany} />
+          <input minLength={2} maxLength={50} name='typeCompany' onChange={handleChange} type='text' placeholder={userData.typeCompany} />
         </fieldset>
         <fieldset>
           <legend>Salario mínimo</legend>

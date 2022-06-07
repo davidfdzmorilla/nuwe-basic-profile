@@ -2,14 +2,13 @@
 import { useState } from 'react'
 import { useSetModal, useUser } from '../../../hooks/hooks'
 
-import { BiUpArrow } from "react-icons/bi"
 import { AiFillCloseCircle } from 'react-icons/ai'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 export const FormStack = ({ hardSkills, reload, setReload }) => {
 
-  const skillsItemsDefect = ['css3', 'sass', 'angular', 'nodejs', 'react', 'javascript', 'typescript', 'python', 'php', 'mysql', 'mongodb', 'amazonaws']
+  const skillsItemsDefect = ['css3', 'sass', 'angular', 'nodejs', 'react', 'javascript', 'typescript', 'python', 'php', 'mysql', 'mongodb', 'amazonaws', 'html5']
 
   const setModal = useSetModal()
   const user = useUser()

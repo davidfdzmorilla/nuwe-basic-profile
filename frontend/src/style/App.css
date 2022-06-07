@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+
 :root {
   --primary-color: #14151f;
   --secondary-color: #1c1d2b;
@@ -26,6 +29,7 @@
   justify-content: flex-start;
   text-align: center;
   gap: 2rem;
+  font-family: 'Inter', sans-serif;
 }
 
 main {

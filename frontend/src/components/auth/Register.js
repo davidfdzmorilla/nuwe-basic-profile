@@ -114,7 +114,7 @@ export const Register = ({ setAction, setRegisterOk }) => {
           </fieldset>
           <fieldset>
             <legend>Password</legend>
-            <input min={6} max={20} onChange={handleChange} type='password' name='password' placeholder='Introduce password...' required />
+            <input minLength={6} maxLength={20} onChange={handleChange} type='password' name='password' placeholder='Introduce password...' required />
           </fieldset>
           <fieldset>
             <legend>Url avatar</legend>
@@ -122,7 +122,7 @@ export const Register = ({ setAction, setRegisterOk }) => {
           </fieldset>
           <fieldset>
             <legend>Nombre</legend>
-            <input id='text' min={4} max={20} onChange={handleChange} type='text' name='name' placeholder='Introduce nombre...' required />
+            <input id='text' minLength={4} maxLength={20} onChange={handleChange} type='text' name='name' placeholder='Introduce nombre...' required />
             {errorType === 'name' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
@@ -132,22 +132,22 @@ export const Register = ({ setAction, setRegisterOk }) => {
           </fieldset>
           <fieldset>
             <legend>Puesto</legend>
-            <input id='professionType' min={4} max={20} onChange={handleChange} type='text' name='professionType' placeholder='Introduce puesto...' required />
+            <input id='professionType' minLength={4} maxLength={20} onChange={handleChange} type='text' name='professionType' placeholder='Introduce puesto...' required />
             {errorType === 'professionType' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Nivel</legend>
-            <input id='professionLevel' min={4} max={20} onChange={handleChange} type='text' name='professionLevel' placeholder='Introduce nivel...' required />
+            <input id='professionLevel' minLength={4} maxLength={20} onChange={handleChange} type='text' name='professionLevel' placeholder='Introduce nivel...' required />
             {errorType === 'professionLevel' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>País</legend>
-            <input id='country' min={4} max={20} onChange={handleChange} type='text' name='country' placeholder='Introduce país...' required />
+            <input id='country' minLength={4} maxLength={20} onChange={handleChange} type='text' name='country' placeholder='Introduce país...' required />
             {errorType === 'country' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Ciudad</legend>
-            <input id='city' min={4} max={20} onChange={handleChange} type='text' name='city' placeholder='Introduce ciudad...' required />
+            <input id='city' minLength={4} maxLength={20} onChange={handleChange} type='text' name='city' placeholder='Introduce ciudad...' required />
             {errorType === 'city' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
@@ -168,12 +168,12 @@ export const Register = ({ setAction, setRegisterOk }) => {
           </fieldset>
           <fieldset>
             <legend>Donde buscas empleo</legend>
-            <input id='ubication' min={4} max={20} onChange={handleChange} type='text' name='ubication' placeholder='Introduce tu preferencia...' required />
+            <input id='ubication' minLength={4} maxLength={20} onChange={handleChange} type='text' name='ubication' placeholder='Introduce tu preferencia...' required />
             {errorType === 'ubication' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
             <legend>Tipo de compañia</legend>
-            <input id='typeCompany' min={4} max={20} onChange={handleChange} type='text' name='typeCompany' placeholder='Introduce tu preferencia...' required />
+            <input id='typeCompany' minLength={4} maxLength={20} onChange={handleChange} type='text' name='typeCompany' placeholder='Introduce tu preferencia...' required />
             {errorType === 'typeCompany' && <p className='error-text'>{errorText}</p>}
           </fieldset>
           <fieldset>
@@ -201,7 +201,7 @@ export const Register = ({ setAction, setRegisterOk }) => {
         </section>
         <fieldset className='text-area-fieldset'>
           <legend>Bio</legend>
-          <textarea min={50} max={600} onChange={handleChange} type='text' name='bio' placeholder='Cuéntanos sobre tí...' required />
+          <textarea minLength={50} maxLength={600} onChange={handleChange} type='text' name='bio' placeholder='Cuéntanos sobre tí...' required />
         </fieldset>
         <div className='buttons-container'>
           <button>Enviar</button>

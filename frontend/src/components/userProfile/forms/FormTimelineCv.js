@@ -46,8 +46,8 @@ export const FormTimelineCv = ({ user, reload, setReload }) => {
 
   return (
     <form onSubmit={handleSubmit} className='form-timeline'>
-      <input name='title' max={80} min={5} onChange={handleChange} type='text' placeholder='Título*' required />
-      <input name='link' max={255} min={10} onChange={handleChange} type='text' placeholder='Enlace(No requerido)' />
+      <input name='title' minLength={5} maxLength={80} onChange={handleChange} type='text' placeholder='Título*' required />
+      <input name='link' maxLength={255} minLength={10} onChange={handleChange} type='url' placeholder='Enlace(No requerido)' />
       <textarea name='description' max={255} min={10} onChange={handleChange} placeholder='Descripción*' required />
       <div className='buttons-container' >
         <button>Guardar</button>
