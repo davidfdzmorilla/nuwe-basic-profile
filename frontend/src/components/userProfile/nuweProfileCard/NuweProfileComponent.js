@@ -5,7 +5,7 @@ import { RadarSoftSkills } from "./RadarSoftSkills"
 
 export const NuweProfileComponent = () => {
   return (
-    <article className='card-newe-profile'>
+    <article className='newe-profile-card'>
       {/* CARD RADAR HARD SKILLS */}
       <RadarHardSkills />
       {/* CARD RADAR SOFT SKILLS*/}

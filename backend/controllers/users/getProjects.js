@@ -11,8 +11,6 @@ const getProjects = async (req, res) => {
     res.send({ error: error.message })
     return
   }
-  console.log(projects)
-
 
   res.status(200)
   res.send(projects)
