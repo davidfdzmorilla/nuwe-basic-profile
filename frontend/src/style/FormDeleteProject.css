@@ -1,0 +1,26 @@
+.form-delete-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.form-delete-container .buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.form-delete-container .buttons-container button {
+  padding: .5rem 1.5rem;
+  font-weight: bolder;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.1rem;
+}
+
+.form-delete-container .buttons-container button:last-child {
+  background-color: var(--danger-color);
+  color: var(--letter-color);
+}

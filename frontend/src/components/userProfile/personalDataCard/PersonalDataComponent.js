@@ -23,7 +23,6 @@ export const PersonalDataComponent = () => {
   const [error, setError] = useState(null)
   const [userData, setUserData] = useState(user)
   const [reload, setReload] = useState(null)
-  console.log(userData)
 
   useEffect(() => {
 

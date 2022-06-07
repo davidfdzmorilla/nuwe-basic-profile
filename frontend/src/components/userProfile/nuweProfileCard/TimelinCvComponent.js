@@ -5,6 +5,7 @@ import { FormTimelineCv } from "../forms/FormTimelineCv"
 
 import { CgTrash } from 'react-icons/cg';
 import { MdModeEditOutline } from 'react-icons/md';
+import { FormDeleteProject } from "../forms/FormDeleteProject";
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -52,8 +53,8 @@ export const TimelinCvComponent = () => {
                 <a href={link} target='_blank' rel='noreferrer nopener'>{link}</a>
               </div>
               <div className="buttons-container">
-                <button><CgTrash /></button>
-                <button><MdModeEditOutline /></button>
+                <button><CgTrash onClick={() => setModal(<FormDeleteProject title={title} id={id} reload={reload} setReload={setReload} />)} /></button>
+                <button><MdModeEditOutline onClick={() => setModal('Editar')} /></button>
               </div>
             </article>
           )
