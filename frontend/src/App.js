@@ -1,13 +1,13 @@
 
 import { useUser } from './hooks/hooks'
 
-import { HeaderFullDesktop } from './components/pages/HeaderFullDesktop'
-import { Footer } from './components/pages/Footer'
+import { HeaderFullDesktop } from './components/pages/headerFullDesktop/HeaderFullDesktop'
+import { Footer } from './components/pages/footer/Footer'
 
-import { Login } from './components/auth/Login'
-import { Header } from './components/pages/Header'
+import { Login } from './components/auth/login/Login'
+import { Header } from './components/pages/header/Header'
 import { Modal } from './components/modal/Modal'
-import { Main } from './components/pages/Main'
+import { Main } from './components/pages/main/Main'
 
 import './App.css'
 

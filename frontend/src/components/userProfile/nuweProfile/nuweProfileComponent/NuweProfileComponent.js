@@ -1,5 +1,5 @@
-import { RadarHardSkills } from "./RadarHardSkills"
-import { RadarSoftSkills } from "./RadarSoftSkills"
+import { RadarHardSkills } from "../graphics/RadarHardSkills"
+import { RadarSoftSkills } from "../graphics/RadarSoftSkills"
 
 import './NuweProfileComponent.css'
 

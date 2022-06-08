@@ -9,7 +9,7 @@ import { VscRemoteExplorer } from 'react-icons/vsc'
 import { FiEdit3 } from 'react-icons/fi'
 import { GoCalendar } from 'react-icons/go'
 
-import { FormWorkPref } from '../forms/FormWorkPref'
+import { FormWorkPref } from '../forms/formWorkPref/FormWorkPref'
 
 import './JobPreferencesComponent.css'
 

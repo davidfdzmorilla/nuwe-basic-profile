@@ -1,9 +1,9 @@
 
 import { useState } from 'react'
 
-import { NuweProfileComponent } from './NuweProfileComponent'
+import { NuweProfileComponent } from '../nuweProfileComponent/NuweProfileComponent'
 
-import { TimelineCvComponent } from './TimelineCvComponent'
+import { TimelineCvComponent } from '../timelineCvComponent/TimelineCvComponent'
 
 import './NuweProfileCard.css'
 

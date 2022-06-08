@@ -1,14 +1,16 @@
 
 import { useEffect, useState } from 'react'
-import { useSetModal } from '../../../hooks/hooks'
+import { useSetModal } from '../../../../hooks/hooks'
 
 import { SiCss3, SiSass, SiAngular, SiReact, SiJavascript, SiTypescript, SiPython, SiPhp, SiMysql, SiMongodb, SiAmazonaws, SiHtml5 } from 'react-icons/si'
 import { IoLogoNodejs } from 'react-icons/io'
 import { FiEdit3, FiCode } from 'react-icons/fi'
 
-import { FormStack } from '../forms/FormStack'
+import { FormStack } from '../../forms/formStack/FormStack'
 
-export const Stacks = ({ stack, reload, setReload }) => {
+import './Stack.css'
+
+export const Stack = ({ stack, reload, setReload }) => {
 
   const setModal = useSetModal()
 
@@ -55,7 +57,7 @@ export const Stacks = ({ stack, reload, setReload }) => {
   }
 
   return (
-    <fieldset>
+    <fieldset className='stack-fieldset'>
       <legend>Stack</legend>
       <section className='stack-container'>
         <FiEdit3 className='pencil-icon' onClick={() => setModal(<FormStack hardSkills={hardSkills} reload={reload} setReload={setReload} />)} />

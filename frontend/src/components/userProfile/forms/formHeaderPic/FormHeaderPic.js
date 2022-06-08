@@ -1,8 +1,8 @@
 
 import { useEffect, useState } from 'react'
-import { useSetModal } from '../../../hooks/hooks'
+import { useSetModal } from '../../../../hooks/hooks'
 
-import Loading from '../../loading/Loading'
+import Loading from '../../../loading/Loading'
 
 import './FormHeaderPic.css'
 

@@ -1,6 +1,6 @@
 
 import { useState } from "react"
-import { useSetUser } from "../../hooks/hooks"
+import { useSetUser } from "../../../hooks/hooks"
 
 import { FiUser, FiCode } from "react-icons/fi"
 import { MdWork, MdOutlineExitToApp } from "react-icons/md"

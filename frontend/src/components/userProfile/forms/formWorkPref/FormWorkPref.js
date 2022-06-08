@@ -1,8 +1,8 @@
 
 import { useState } from 'react'
-import { useSetModal } from '../../../hooks/hooks'
+import { useSetModal } from '../../../../hooks/hooks'
 
-import { Switch } from '../../switch/Switch'
+import { Switch } from '../../../switch/Switch'
 
 import './FormWorkPref.css'
 

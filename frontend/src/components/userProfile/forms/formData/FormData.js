@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { useSetModal } from '../../../hooks/hooks'
+import { useSetModal } from '../../../../hooks/hooks'
 
 import './FormData.css'
 

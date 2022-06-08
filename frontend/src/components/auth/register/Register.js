@@ -1,13 +1,13 @@
 
 import { useState } from 'react'
 
-import { validateData } from '../../utils/validateData'
+import { validateData } from '../../../utils/validateData'
 
-import { Switch } from '../switch/Switch'
+import { Switch } from '../../switch/Switch'
 
 import './Register.css'
 
-import userTest from '../../data/userTest.json'
+import userTest from '../../../data/userTest.json'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 

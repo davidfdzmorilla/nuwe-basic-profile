@@ -1,9 +1,9 @@
 
 import { useState } from 'react'
-import { useSetUser } from '../../hooks/hooks'
+import { useSetUser } from '../../../hooks/hooks'
 
-import { Navbar } from '../navBar/NavBar'
-import { Logo } from '../logo/Logo'
+import { Navbar } from '../../navBar/NavBar'
+import { Logo } from '../../logo/Logo'
 
 import { BiExit } from 'react-icons/bi'
 

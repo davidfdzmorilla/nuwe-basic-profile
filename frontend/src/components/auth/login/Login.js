@@ -1,9 +1,9 @@
 
 import { useState } from 'react'
-import { useSetModal, useSetUser } from '../../hooks/hooks'
+import { useSetModal, useSetUser } from '../../../hooks/hooks'
 
-import { Logo } from '../logo/Logo.js'
-import { Register } from './Register'
+import { Logo } from '../../logo/Logo.js'
+import { Register } from '../register/Register'
 
 import './Login.css'
 

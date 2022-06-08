@@ -1,12 +1,13 @@
 
 import { useEffect, useState } from "react"
-import { useSetModal, useUser } from "../../../hooks/hooks"
-import { FormTimelineCv } from "../forms/FormTimelineCv"
+import { useSetModal, useUser } from "../../../../hooks/hooks"
 
 import { CgTrash } from 'react-icons/cg';
 import { MdModeEditOutline } from 'react-icons/md';
-import { FormDeleteProject } from "../forms/FormDeleteProject";
-import { FormEditProject } from "../forms/FormEditProject";
+
+import { FormTimelineCv } from "../../forms/formTimelineCv/FormTimelineCv"
+import { FormDeleteProject } from "../../forms/formDeleteProject/FormDeleteProject";
+import { FormEditProject } from "../../forms/formEditProject/FormEditProject";
 
 import './TimelineCvComponent.css'
 
