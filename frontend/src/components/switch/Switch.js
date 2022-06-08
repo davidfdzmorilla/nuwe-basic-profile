@@ -1,5 +1,5 @@
 
-import '../../style/Switch.css'
+import './Switch.css'
 
 export const Switch = ({ on, setSwitch, getSwitch }) => {
 

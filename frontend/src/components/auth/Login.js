@@ -5,7 +5,7 @@ import { useSetModal, useSetUser } from '../../hooks/hooks'
 import { Logo } from '../logo/Logo.js'
 import { Register } from './Register'
 
-import '../../style/Login.css'
+import './Login.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 

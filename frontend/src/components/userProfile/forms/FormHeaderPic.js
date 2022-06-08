@@ -2,20 +2,25 @@
 import { useEffect, useState } from 'react'
 import { useSetModal } from '../../../hooks/hooks'
 
-import '../../../style/FormHeaderPic.css'
+import Loading from '../../loading/Loading'
+
+import './FormHeaderPic.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 export const FormHeaderPic = ({ user, reload, setReload }) => {
 
+  const defectQuery = 'code'
+
   const [images, setImages] = useState([])
-  const [query, setQuery] = useState('code')
+  const [query, setQuery] = useState(defectQuery)
   const [page, setPage] = useState(1)
+  const [isLoading, setIsLoading] = useState(false)
 
   const setModal = useSetModal()
 
   const API_KEY = 'PBUkRF0btDl28l8mjVnxVI0334aVuMYcLyW73MRMsc4'
-  const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${query}&client_id=${API_KEY}`
+  const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${query || defectQuery}&client_id=${API_KEY}`
 
   useEffect(() => {
 
@@ -23,11 +28,12 @@ export const FormHeaderPic = ({ user, reload, setReload }) => {
       const res = await fetch(URL)
       const data = await res.json()
       setImages(data)
+      setIsLoading(true)
     }
 
     loadData()
   }
-    , [URL, query, page])
+    , [URL, query, page, isLoading])
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -58,26 +64,33 @@ export const FormHeaderPic = ({ user, reload, setReload }) => {
 
   return (
     <article className='form-header-pic'>
-      <h3>Imagen de portada</h3>
-      <form className='form' onSubmit={handleSubmit}>
-        <input onChange={handleChange} type='text' placeholder='Buscar...' />
-      </form>
-      <section className='images-container'>
-        {images.results && images.results.map(image => {
-          return (
-            <img onClick={() => onChangePic(image.urls.full)} src={image.urls.full} key={image.id} alt={image.description} />
-          )
-        })}
-      </section>
-      <div className='buttons-container'>
-        {page > 1 &&
-          <button onClick={() => setPage(page - 1)}>Anterior</button>
-        }
-        <span>{page}</span>
-        {images.total_pages > 1 && page <= images.total_pages &&
-          <button onClick={() => setPage(page + 1)}>Siguiente</button>
-        }
-      </div>
+      {isLoading ?
+        <>
+          <h3>Imagen de portada</h3>
+          <form className='form' onSubmit={handleSubmit}>
+            <input onChange={handleChange} type='text' placeholder='Buscar...' />
+          </form>
+          <section className='images-container'>
+            {images.results.length > 0 ? images.results.map(image => {
+              return (
+                <img onClick={() => onChangePic(image.urls.full)} src={image.urls.full} key={image.id} alt={image.description} />
+              )
+            }) :
+              <h3>No se han encontrado resultados. 😞</h3>
+            }
+          </section>
+          <div className='buttons-container'>
+            {page > 1 &&
+              <button onClick={() => setPage(page - 1)}>Anterior</button>
+            }
+            <span>{images.results.length > 0 && page}</span>
+            {images.total_pages > 1 && page <= images.total_pages &&
+              <button onClick={() => setPage(page + 1)}>Siguiente</button>
+            }
+          </div>
+        </> :
+        <Loading />
+      }
     </article>
   )
 

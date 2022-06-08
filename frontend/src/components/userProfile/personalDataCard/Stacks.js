@@ -19,33 +19,34 @@ export const Stacks = ({ stack, reload, setReload }) => {
   }, [stack])
 
   const getIcons = (stack, i) => {
+    const color = '#14151f'
     switch (true) {
       case stack === 'html5':
-        return <SiHtml5 style={{ backgroundColor: '#f2f2f2', color: '#d84924' }} className='stack-item' key={i} />
+        return <SiHtml5 style={{ backgroundColor: '#d74824', color }} className='stack-item' key={i} />
       case stack === 'css3':
-        return <SiCss3 style={{ backgroundColor: '#f2f2f2', color: '#0172bd' }} className='stack-item' key={i} />
+        return <SiCss3 style={{ backgroundColor: '#0172bd', color }} className='stack-item' key={i} />
       case stack === 'javascript':
-        return <SiJavascript style={{ backgroundColor: '#f2f2f2', color: '#ead41c' }} className='stack-item' key={i} />
+        return <SiJavascript style={{ backgroundColor: '#ead41c', color }} className='stack-item' key={i} />
       case stack === 'sass':
-        return <SiSass style={{ backgroundColor: '#f2f2f2', color: '#c36291' }} className='stack-item' key={i} />
+        return <SiSass style={{ backgroundColor: '#c36291', color }} className='stack-item' key={i} />
       case stack === 'angular':
-        return <SiAngular style={{ backgroundColor: '#f2f2f2', color: '#d3002f' }} className='stack-item' key={i} />
+        return <SiAngular style={{ backgroundColor: '#d3002f', color }} className='stack-item' key={i} />
       case stack === 'react':
-        return <SiReact style={{ backgroundColor: '#f2f2f2', color: '#5cd0ee' }} className='stack-item' key={i} />
+        return <SiReact style={{ backgroundColor: '#5cd0ee', color }} className='stack-item' key={i} />
       case stack === 'typescript':
-        return <SiTypescript style={{ backgroundColor: '#f2f2f2', color: '#0074c2' }} className='stack-item' key={i} />
+        return <SiTypescript style={{ backgroundColor: '#0074c2', color }} className='stack-item' key={i} />
       case stack === 'python':
-        return <SiPython style={{ backgroundColor: '#f2f2f2', color: '#417dad' }} className='stack-item' key={i} />
+        return <SiPython style={{ backgroundColor: '#417dad', color }} className='stack-item' key={i} />
       case stack === 'php':
-        return <SiPhp style={{ backgroundColor: '', color: '#828cb4' }} className='stack-item' key={i} />
+        return <SiPhp style={{ backgroundColor: '#828cb4', color }} className='stack-item' key={i} />
       case stack === 'mysql':
-        return <SiMysql style={{ backgroundColor: '#f2f2f2', color: '#e68a10' }} className='stack-item' key={i} />
+        return <SiMysql style={{ backgroundColor: '#e68a10', color }} className='stack-item' key={i} />
       case stack === 'mongodb':
-        return <SiMongodb style={{ backgroundColor: '#f2f2f2', color: '#49aa3a' }} className='stack-item' key={i} />
+        return <SiMongodb style={{ backgroundColor: '#49aa3a', color }} className='stack-item' key={i} />
       case stack === 'amazonaws':
-        return <SiAmazonaws style={{ backgroundColor: '#f2f2f2', color: '#f29100' }} className='stack-item' key={i} />
+        return <SiAmazonaws style={{ backgroundColor: '#f29100', color }} className='stack-item' key={i} />
       case stack === 'nodejs':
-        return <IoLogoNodejs style={{ backgroundColor: '#f2f2f2', color: '#398037' }} className='stack-item' key={i} />
+        return <IoLogoNodejs style={{ backgroundColor: '#398037', color }} className='stack-item' key={i} />
       case stack === 'demo':
         return <FiCode className='stack-item' key={i} />
       default:

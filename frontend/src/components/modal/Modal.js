@@ -1,7 +1,7 @@
 
 import { useModal, useSetModal } from '../../hooks/hooks'
 
-import '../../style/Modal.css'
+import './Modal.css'
 
 export const Modal = () => {
   const modal = useModal()

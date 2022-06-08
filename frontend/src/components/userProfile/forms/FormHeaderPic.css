@@ -1,8 +1,9 @@
 .form-header-pic {
-  min-height: 50vh;
+  width: 90vw;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
 }
@@ -42,7 +43,13 @@
 .form-header-pic .buttons-container button {
   padding: .5rem 1rem;
   border: none;
-  background-color: var(--active-button);
   border-radius: 7px;
   font-weight: bolder;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.form-header-pic .buttons-container button:hover {
+  background-color: var(--active-button);
+  color: var(--letter-color);
 }

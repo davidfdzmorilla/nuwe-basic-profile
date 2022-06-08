@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 import { NuweProfileComponent } from './NuweProfileComponent'
 
-import '../../../style/NuweProfileCard.css'
+import './NuweProfileCard.css'
 import { TimelinCvComponent } from './TimelinCvComponent'
 
 export const NuweProfileCard = () => {

@@ -2,7 +2,7 @@
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaRegWindowClose } from 'react-icons/fa'
 
-import '../../style/NavBar.css'
+import './NavBar.css'
 
 export const Navbar = ({ sidebar, setSidebar }) => {
 

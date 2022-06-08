@@ -7,7 +7,7 @@ import { Logo } from '../logo/Logo'
 
 import { BiExit } from 'react-icons/bi'
 
-import '../../style/Header.css'
+import './Header.css'
 
 export const Header = () => {
 

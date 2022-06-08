@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 
 import { App } from './App'
 
-import './style/index.css'
+import './index.css'
 
 const localStorageMiddleware = store => next => action => {
   let result = next(action)

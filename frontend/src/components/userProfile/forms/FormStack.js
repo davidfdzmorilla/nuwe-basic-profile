@@ -14,16 +14,17 @@ export const FormStack = ({ hardSkills, reload, setReload }) => {
   const user = useUser()
   const [skillSearch, setSkillSearch] = useState(null)
   const [newSkills, setNewSkills] = useState([...hardSkills])
+  const [searchRes, setSearchRes] = useState([])
 
 
-  let searchRes = skillsItemsDefect.filter((skill) => {
-    let finalRes = skill.toLowerCase()
-    return finalRes.includes(skillSearch)
-  })
 
   const handleChange = ({ target }) => {
     const { value } = target
-    setSkillSearch(value)
+    setSearchRes(skillsItemsDefect.filter((skill) => {
+      let finalRes = skill.toLowerCase()
+      return finalRes.includes(skillSearch)
+    }))
+    setSkillSearch(value.toLocaleLowerCase())
   }
 
   const handleRemove = i => {
@@ -57,7 +58,7 @@ export const FormStack = ({ hardSkills, reload, setReload }) => {
       <p>Aquí podrás definir tu stack de hard skills con las habilidades que utilizas frecuentemente.</p>
       <article className='stack-container'>
         {/* COINCIDENCIAS DE BUSQUEDA */}
-        {skillSearch?.length > 0 &&
+        {skillSearch &&
           <ul className='skills-match-container'>
             {searchRes?.map((item, i) => {
               return (

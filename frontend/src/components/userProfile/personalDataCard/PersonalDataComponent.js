@@ -10,7 +10,7 @@ import { FormData } from '../forms/FormData'
 import { FormHeaderPic } from '../forms/FormHeaderPic'
 import { Stacks } from './Stacks'
 
-import '../../../style/PersonalDataComponent.css'
+import './PersonalDataComponent.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 

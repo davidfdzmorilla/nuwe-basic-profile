@@ -11,7 +11,7 @@ import { GoCalendar } from 'react-icons/go'
 
 import { FormWorkPref } from '../forms/FormWorkPref'
 
-import '../../../style/JobPreferencesComponent.css'
+import './JobPreferencesComponent.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 

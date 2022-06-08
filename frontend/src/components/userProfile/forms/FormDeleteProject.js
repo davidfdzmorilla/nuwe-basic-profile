@@ -1,7 +1,7 @@
 
 import { useSetModal, useUser } from '../../../hooks/hooks'
 
-import '../../../style/FormDeleteProject.css'
+import './FormDeleteProject.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 

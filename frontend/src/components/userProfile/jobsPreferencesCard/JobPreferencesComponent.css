@@ -20,6 +20,7 @@
   position: absolute;
   padding: .5rem 1rem;
   right: 10px;
+  cursor: pointer;
 }
 
 .card-job-preferences .up-container,

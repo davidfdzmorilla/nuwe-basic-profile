@@ -2,7 +2,7 @@
 import { VscGithub } from 'react-icons/vsc'
 import { AiOutlineLinkedin } from 'react-icons/ai'
 
-import '../../style/Footer.css'
+import './Footer.css'
 
 
 export const Footer = () => {

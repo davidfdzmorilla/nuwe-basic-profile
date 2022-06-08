@@ -5,37 +5,11 @@ import { validateData } from '../../utils/validateData'
 
 import { Switch } from '../switch/Switch'
 
-import '../../style/RegisterForm.css'
+import './RegisterForm.css'
 
 import userTest from '../../data/userTest.json'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
-
-
-const defaultForm = {
-  headerPic: "",
-  avatar: "",
-  name: "",
-  email: "",
-  password: "",
-  tel: "",
-  professionType: "",
-  professionLevel: "",
-  bio: "",
-  country: "",
-  city: "",
-  linkedin: "",
-  gitHub: "",
-  gitLab: "",
-  behance: "",
-  ubication: "",
-  typeCompany: "",
-  minSalary: "",
-  likeSalary: "",
-  availabilityToTravel: "",
-  remoteWork: "",
-  inmediateIncorporation: ""
-}
 
 
 export const Register = ({ setAction, setRegisterOk }) => {
@@ -53,12 +27,14 @@ export const Register = ({ setAction, setRegisterOk }) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    console.log(form)
-    const { headerPic, avatar, name, email, password, tel, professionType, professionLevel, bio, country, city, linkedin, gitHub, gitLab, behance, ubication, typeCompany, minSalary, likeSalary, availabilityToTravel, remoteWork, inmediateIncorporation } = form
-
-    if (!headerPic && !avatar && !name && !email && !password && !tel && !professionType && !professionLevel && !bio && !country && !city && !linkedin && !gitHub && !gitLab && !behance && !ubication && !typeCompany && !minSalary && !likeSalary && !availabilityToTravel && !remoteWork && !inmediateIncorporation) return
+    const { name, email, password, tel, professionType, professionLevel, country, city, ubication, typeCompany, minSalary, likeSalary } = form
 
     const { errorTypeValidation, errorTextValidation } = validateData(name, email, tel, professionType, professionLevel, country, city, ubication, typeCompany, minSalary, likeSalary)
+    if (!email || !password) {
+      setErrorText('Introduce email y password.')
+      return
+    }
+
 
     if (errorTypeValidation) {
       setErrorType(errorTypeValidation)
@@ -82,6 +58,8 @@ export const Register = ({ setAction, setRegisterOk }) => {
     if (res.ok) {
       setAction('login')
       setRegisterOk('Usuario registrado con éxito. Ya puedes hacer login.')
+    } else if (res.status === 409) {
+      setErrorText('Usuario ya registrado')
     } else {
       console.log('error')
     }
@@ -209,6 +187,9 @@ export const Register = ({ setAction, setRegisterOk }) => {
         </div>
       </form>
       <button className='insert-data-demo-button' onClick={handleSubmit}>Enviar con datos de test</button>
+      {errorText &&
+        <p style={{ color: 'red', fontSize: '1.5rem' }}>{errorText}</p>
+      }
     </>
   )
 }

@@ -10,12 +10,21 @@
   margin: 10rem 1rem 0;
 }
 
+
 .images-container .pencil-icon,
 .card-personal-data .data-container .pencil-icon {
   font-size: 1.3rem;
   position: absolute;
-  padding-top: 20px;
+  margin-top: 20px;
   right: 10px;
+}
+
+.images-container svg.pencil-icon {
+  padding: 0.5rem;
+  background-color: rgba(23, 22, 22, 0.075);
+  border-radius: 50%;
+  right: 20px;
+
 }
 
 @media (min-width: 768px) {

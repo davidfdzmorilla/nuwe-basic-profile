@@ -9,7 +9,7 @@ import { Header } from './components/pages/Header'
 import { Modal } from './components/modal/Modal'
 import { Main } from './components/pages/Main'
 
-import './style/App.css'
+import './App.css'
 
 export const App = () => {
 
