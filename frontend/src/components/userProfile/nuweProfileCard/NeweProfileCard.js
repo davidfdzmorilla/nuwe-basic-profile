@@ -3,12 +3,13 @@ import { useState } from 'react'
 
 import { NuweProfileComponent } from './NuweProfileComponent'
 
+import { TimelineCvComponent } from './TimelineCvComponent'
+
 import './NuweProfileCard.css'
-import { TimelinCvComponent } from './TimelinCvComponent'
 
 export const NuweProfileCard = () => {
 
-  const timeLineData = <TimelinCvComponent />
+  const timeLineData = <TimelineCvComponent />
   const nuweProfile = <NuweProfileComponent />
 
   const [type, setType] = useState('profile')

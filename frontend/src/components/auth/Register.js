@@ -5,7 +5,7 @@ import { validateData } from '../../utils/validateData'
 
 import { Switch } from '../switch/Switch'
 
-import './RegisterForm.css'
+import './Register.css'
 
 import userTest from '../../data/userTest.json'
 

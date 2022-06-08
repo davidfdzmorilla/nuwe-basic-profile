@@ -1,0 +1,50 @@
+.newe-profile-container .newe-profile-component {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 3px solid var(--line-color);
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  padding: 1rem 0 1.5rem;
+}
+
+.newe-profile-container .newe-profile-component .radar-skills-card {
+  width: 80%;
+  border: 1px solid var(--line-color);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+
+.newe-profile-container .newe-profile-component .radar-skills-card .others-skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+.newe-profile-container .newe-profile-component .radar-skills-card .others-skills-container h3 {
+  width: 100%;
+}
+
+.newe-profile-container .newe-profile-component .radar-skills-card .others-skills-container .others-skills-card {
+  width: 26%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem;
+  background-color: var(--primary-color);
+  font-size: .7rem;
+  border-radius: 5px;
+}
+
+.newe-profile-container .newe-profile-component .radar-skills-card .others-skills-container .others-skills-card svg {
+  font-size: 4rem;
+  color: var(--active-button);
+}

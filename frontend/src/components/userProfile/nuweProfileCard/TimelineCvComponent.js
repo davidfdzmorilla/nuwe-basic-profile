@@ -8,11 +8,13 @@ import { MdModeEditOutline } from 'react-icons/md';
 import { FormDeleteProject } from "../forms/FormDeleteProject";
 import { FormEditProject } from "../forms/FormEditProject";
 
+import './TimelineCvComponent.css'
+
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 
 
-export const TimelinCvComponent = () => {
+export const TimelineCvComponent = () => {
 
   const user = useUser()
 

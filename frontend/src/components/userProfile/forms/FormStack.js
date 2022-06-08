@@ -4,6 +4,8 @@ import { useSetModal, useUser } from '../../../hooks/hooks'
 
 import { AiFillCloseCircle } from 'react-icons/ai'
 
+import './FormStack.css'
+
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 export const FormStack = ({ hardSkills, reload, setReload }) => {
@@ -14,7 +16,9 @@ export const FormStack = ({ hardSkills, reload, setReload }) => {
   const user = useUser()
   const [skillSearch, setSkillSearch] = useState(null)
   const [newSkills, setNewSkills] = useState([...hardSkills])
-  const [searchRes, setSearchRes] = useState([])
+  const [searchRes, setSearchRes] = useState('')
+
+  console.log(searchRes)
 
 
 
@@ -62,7 +66,7 @@ export const FormStack = ({ hardSkills, reload, setReload }) => {
           <ul className='skills-match-container'>
             {searchRes?.map((item, i) => {
               return (
-                <li onClick={() => setNewSkills([...newSkills, item.toLocaleLowerCase()])} key={i}>{item.toLocaleUpperCase()}</li>
+                <li onClick={() => setNewSkills([...newSkills, item.toLocaleLowerCase()])} key={i}>{item.toLocaleUpperCase() || 'No se ha encontrado skill.'}</li>
               )
             })}
           </ul>
