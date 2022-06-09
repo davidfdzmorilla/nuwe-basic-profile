@@ -43,7 +43,7 @@ export const FormEditProject = ({ id, title, link, description, reload, setReloa
 
   return (
     <form onSubmit={handleSubmit} className='form-edit-project-container'>
-      <input minLength={2} maxLength={50} onChange={handleChange} name='title' type='text' placeholder={title} />
+      <input minLength={5} maxLength={50} onChange={handleChange} name='title' type='text' placeholder={title} />
       <input onChange={handleChange} name='link' type='url' placeholder={link} />
       <textarea minLength={20} maxLength={255} onChange={handleChange} name='description' placeholder={description} />
       <div className='buttons-container'>

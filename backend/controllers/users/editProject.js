@@ -46,9 +46,7 @@ const editProject = async (req, res) => {
   res.status(202)
   res.send({
     message: 'Project data updated',
-    user: {
-      ...updatedUserProject
-    }
+    data: { ...updatedUserProject }
   })
 }
 

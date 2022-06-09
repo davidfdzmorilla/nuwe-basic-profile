@@ -10,7 +10,7 @@ const deleteProject = async (req, res) => {
     project = await usersRepository.getUserProjectById(projectId)
     if (project.length < 1) throw Error('Project not found')
   } catch (error) {
-    res.status(500)
+    res.status(404)
     res.send({ error: error.message })
     return
   }

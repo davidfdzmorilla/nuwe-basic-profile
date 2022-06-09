@@ -14,13 +14,13 @@ const profile = async (req, res) => {
 
     try {
         if (!user) throw new Error('User not found')
-        res.status(202)
+        res.status(200)
         res.send({
             ...user
         })
 
     } catch (error) {
-        res.status(400)
+        res.status(404)
         res.send({ error: error.message })
         return
     }
