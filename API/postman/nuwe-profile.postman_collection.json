@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "a2ac562b-57f6-4eac-9c8c-8d74ba7f4f66",
+		"name": "nuwe-profile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18774542"
+	},
+	"item": [
+		{
+			"name": "/users/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"headerPic\": \"https://images.unsplash.com/photo-1564865878688-9a244444042a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzMzNDB8MHwxfHNlYXJjaHwxfHxjb2RlfGVufDB8fHx8MTY1MzkwNjIwMA&ixlib=rb-1.2.1&q=80\",\n    \"avatar\": \"avatar.png\",\n    \"name\": \"davidfdzmorilla\",\n    \"email\": \"correo@davidfdzmorilla.dev\",\n    \"password\": \"123456\",\n    \"tel\": 660791578,\n    \"professionType\": \"Web dev\",\n    \"professionLevel\": \"Junior\",\n    \"bio\": \"Me llamo David y con 42 años busco mi primer empleo como desarrollador 💻. Después de una carrera de casi 20 años en el sector marítimo 🚢, decidí prepararme para ser desarrollador, algo que siempre me fascinó 😲. Me encanta JavaScript y todo lo relacinado con la parte Frontend del desarrollo de aplicaciones web, donde sigo formándome y especializándome. Me considero una persona a la que le gusta trabajar en equipo 🦾 y comprometida a seguir aprendiendo 📚 para poder resolver proyectos cada vez más complejos.\",\n    \"country\": \"España\",\n    \"city\": \"Pontevedra\",\n    \"linkedin\": \"https://linkedin.com/davidfdzmorilla\",\n    \"gitHub\": \"https://github.com/davidfdzmorilla\",\n    \"gitLab\": \"https://gitlab.com/\",\n    \"behance\": \"https://www.behance.net/\",\n    \"ubication\": \"Barcelona, España\",\n    \"typeCompany\": \"Startup, 200 a 500 empleados\",\n    \"minSalary\": 40000,\n    \"likeSalary\": 45000,\n    \"availabilityToTravel\": false,\n    \"remoteWork\": false,\n    \"inmediateIncorporation\": false\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"correo@davidfdzmorilla.dev\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTQxMTYwNjcsInVzZXIiOnsiaWQiOjF9LCJpYXQiOjE2NTQwODAwNjd9.yfXk7v0tkp5HIQKXAzQ_6jK3dD5NbOjPSr4mpE7rC88",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"headerPic\": \"https://images.unsplash.com/photo-1564865878688-9a244444042a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzMzNDB8MHwxfHNlYXJjaHwxfHxjb2RlfGVufDB8fHx8MTY1MzkwNjIwMA&ixlib=rb-1.2.1&q=80\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTQxMTkyMjksInVzZXIiOnsiaWQiOjF9LCJpYXQiOjE2NTQwODMyMjl9.iNIPDfmrC1Rvwrp2B2eECl10TWLJRBZ_eKOyOunAMxQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/projects",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTQ1NzU0MTksInVzZXIiOnsiaWQiOjF9LCJpYXQiOjE2NTQ1Mzk0MTl9.vXJRwtAFob4HW073SSCPlXqIWlreUmyRM_FSA_YGyRc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/create-project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTQ1NzU1ODMsInVzZXIiOnsiaWQiOjF9LCJpYXQiOjE2NTQ1Mzk1ODN9.o62F8i_3aoMqLeqRJeMvw-s00KGey2sCcNEb8_WR_5c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Test\",\n    \"link\": \"https://davidfdzmorilla.dev\",\n    \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus ex dolor, volutpat eleifend arcu tristique sed. Aliquam id odio pulvinar, tincidunt sem ut, viverra odio. Praesent tempus nulla id diam vehicula, id feugiat odio commodo. Nunc sed libero pulvinar, convallis lorem non, vulputate augue. In ut sagittis est. In tristique dolor eu sapien tempus porttitor. In hac habitasse platea dictumst. Nunc sed lectus aliquet, venenatis nulla quis, mollis justo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/create-project",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"create-project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/projects",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTQ1NzY2NzMsInVzZXIiOnsiaWQiOjF9LCJpYXQiOjE2NTQ1NDA2NzN9.yLJzNub1lvkvrhwi4RlA57ppfTd353i03TiEe2Mu4bw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/project/delete/3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTQ2MzMwNTMsInVzZXIiOnsiaWQiOjF9LCJpYXQiOjE2NTQ1OTcwNTN9.pmnDMQF5IVLd0qVE7aK2BRYENzCzXkMUGFXQjzflduE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/project/delete/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"project",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
