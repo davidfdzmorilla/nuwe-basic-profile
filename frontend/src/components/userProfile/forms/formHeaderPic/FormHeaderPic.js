@@ -7,6 +7,8 @@ import Loading from '../../../loading/Loading'
 import './FormHeaderPic.css'
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
+const SERVER_UNSPLASH = process.env.REACT_APP_SERVER_UNPLASH
+const UNSLASH_API_KEY = process.env.REACT_APP_UNSLASH_API_KEY
 
 export const FormHeaderPic = ({ user, reload, setReload }) => {
 
@@ -19,8 +21,7 @@ export const FormHeaderPic = ({ user, reload, setReload }) => {
 
   const setModal = useSetModal()
 
-  const API_KEY = 'PBUkRF0btDl28l8mjVnxVI0334aVuMYcLyW73MRMsc4'
-  const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${query || defectQuery}&client_id=${API_KEY}`
+  const URL = `${SERVER_UNSPLASH}/search/photos?page=${page}&query=${query || defectQuery}&client_id=${UNSLASH_API_KEY}`
 
   useEffect(() => {
 

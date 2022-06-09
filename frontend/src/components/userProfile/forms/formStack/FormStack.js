@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSetModal, useUser } from '../../../../hooks/hooks'
 
 import { AiFillCloseCircle } from 'react-icons/ai'
@@ -14,21 +14,20 @@ export const FormStack = ({ hardSkills, reload, setReload }) => {
 
   const setModal = useSetModal()
   const user = useUser()
-  const [skillSearch, setSkillSearch] = useState(null)
   const [newSkills, setNewSkills] = useState([...hardSkills])
-  const [searchRes, setSearchRes] = useState('')
+  const [searchRes, setSearchRes] = useState([])
 
-  console.log(searchRes)
+  useEffect(() => {
+    setSearchRes([...skillsItemsDefect])
+  }, [])
 
 
 
   const handleChange = ({ target }) => {
     const { value } = target
     setSearchRes(skillsItemsDefect.filter((skill) => {
-      let finalRes = skill.toLowerCase()
-      return finalRes.includes(skillSearch)
+      return skill.toLowerCase().includes(value)
     }))
-    setSkillSearch(value.toLocaleLowerCase())
   }
 
   const handleRemove = i => {
@@ -62,15 +61,14 @@ export const FormStack = ({ hardSkills, reload, setReload }) => {
       <p>Aquí podrás definir tu stack de hard skills con las habilidades que utilizas frecuentemente.</p>
       <article className='stack-container'>
         {/* COINCIDENCIAS DE BUSQUEDA */}
-        {skillSearch &&
+        {searchRes.length > 0 &&
           <ul className='skills-match-container'>
-            {searchRes?.map((item, i) => {
+            {searchRes.map((item, i) => {
               return (
-                <li onClick={() => setNewSkills([...newSkills, item.toLocaleLowerCase()])} key={i}>{item.toLocaleUpperCase() || 'No se ha encontrado skill.'}</li>
+                <li onClick={() => setNewSkills([...newSkills, item.toLocaleLowerCase()])} key={i}>{item.toLocaleUpperCase()}</li>
               )
             })}
-          </ul>
-        }
+          </ul>}
         <ul className='skills-container'>
           {newSkills.map((skill, i) => {
             return (
