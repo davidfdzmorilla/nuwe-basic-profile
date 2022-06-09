@@ -8,7 +8,7 @@
   <h1 align="center">NUWE BASIC PROFILE</h1>
 
   <p align="left">
-    Web application developed for the challenge of<a href="https://nuwe.io">nuwe.io</a>
+    Web application developed for the challenge of <a href="https://nuwe.io">nuwe.io</a>
     <br />
     <br />
     <a href="https://nuweprofile.davidfdzmorilla.dev">Ver Demo</a>
