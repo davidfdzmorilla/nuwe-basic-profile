@@ -8,7 +8,7 @@
   <h1 align="center">NUWE BASIC PROFILE</h1>
 
   <p align="left">
-    Aplicación web desarrolldada para challenge de <a href="https://nuwe.io">nuwe.io</a>
+    Web application developed for the challenge of<a href="https://nuwe.io">nuwe.io</a>
     <br />
     <br />
     <a href="https://nuweprofile.davidfdzmorilla.dev">Ver Demo</a>
@@ -19,25 +19,25 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre el proyecto
 
-Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Express/Node.js y MySQL, y una App desarrollada con React
+Nuwe Basic Profile has been developed with a REST API, developed with Express/Node.js and MySQL, and an App developed with React.
 
 
 ## API RES
 
 ## User endpoints
 
-* [Registrar un usuario](#create-user) : `POST /users/register`
+* [Register a user](#create-user) : `POST /users/register`
 * [Login](#login) : `POST /users/login`
-* [Recoge usuario](#get-user) : `GET /users/profile`
-* [Edita usuario](#edit-user) : `PATCH /users/`
-* [Crea un proyecto](#create-proyect) : `POST /users/create-project`
-* [Coge proyectos](#create-proyect) : `POST /users/projects`
-* [Edita un proyecto](#edit-project) : `PATCH /users/project/:id`
-* [Elimina un proyecto](#delete-project) : `PATCH /users/project/delete/:id`
+* [Get user](#get-user) : `GET /users/profile`
+* [Update user](#edit-user) : `PATCH /users/`
+* [Create a project](#create-proyect) : `POST /users/create-project`
+* [Get projects](#create-proyect) : `POST /users/projects`
+* [Update project](#edit-project) : `PATCH /users/project/:id`
+* [Delete project](#delete-project) : `PATCH /users/project/delete/:id`
 
 &nbsp;
 
-### Registrar usuario :
+### Register a user :
 
 
 - **URL** : `/users/register`
@@ -106,7 +106,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Success Responses_
 
 
-- **Condition** : Usuario registrado con éxito.
+- **Condition** : Registered user successfully.
 
 - **Code** : `201 Created`
 
@@ -124,7 +124,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Error Responses_
 
 
-- **Condition** : Error al acceder a base de datos.
+- **Condition** : Error accessing database.
 
 - **Code** : `500 Internal Server Error`
 
@@ -132,7 +132,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 #### OR
 
-- **Condition** : Usuario ya registrado.
+- **Condition** : User already registered.
 
 - **Code** : `409 Conflict`
 
@@ -141,7 +141,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 #### OR
 
-- **Condition** : Datos inválidos.
+- **Condition** : Invalid data.
 
 - **Code** : `400 Bad Request`
 
@@ -176,10 +176,9 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 ```json
 {
-    
     "email": "damo@demo.de",
     "password": "demo123456"
-  }
+}
 ```
 
 
@@ -196,7 +195,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Error Responses_
 
 
-- **Condition** : Error al acceder a base de datos.
+- **Condition** : Error accessing database.
 
 - **Code** : `500 Internal Server Error`
 
@@ -205,7 +204,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 #### OR
 
-- **Condition** : Datos inválidos.
+- **Condition** : Invalid data.
 
 - **Code** : `400 Bad Request`
 
@@ -220,7 +219,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 #### OR
 
-- **Condition** : Usuario no registrado.
+- **Condition** : Unregistered user.
 
 - **Code** : `404 Bad Request`
 
@@ -235,7 +234,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 #### OR
 
-- **Condition** : Credenciales no válidas.
+- **Condition** : Invalid credentials.
 
 - **Code** : `401 Bad Request`
 
@@ -248,7 +247,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 ```
 
 &nbsp;
-### Perfil de usuario :
+### Get user :
 
 
 - **URL** : `/users/profile`
@@ -267,7 +266,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Success Responses_
 
 
-- **Condition** : El usuario existe y es accesible.
+- **Condition** : The user exists and is accessible.
 
 - **Code** : `200 Ok`
 
@@ -304,7 +303,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Error Responses_
 
 
-- **Condition** : Error al acceder a base de datos.
+- **Condition** : Error accessing database.
 
 - **Code** : `500 Internal Server Error`
 
@@ -312,7 +311,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 #### OR
 
-- **Condition** : Usuario no existe.
+- **Condition** : User not found.
 
 - **Code** : `404 Not found`
 
@@ -320,7 +319,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 
 &nbsp;
-### Editar usuario :
+### Edit user :
 
 
 - **URL** : `/users/`
@@ -388,7 +387,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Success Responses_
 
 
-- **Condition** : Usuario editado con éxito.
+- **Condition** : User successfully edited.
 
 - **Code** : `202 Ok`
 
@@ -428,7 +427,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Error Responses_
 
 
-- **Condition** : Error al acceder a la base de datos.
+- **Condition** : Error accessing database.
 
 - **Code** : `500 Internal Server Error`
 
@@ -437,7 +436,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 #### OR
 
-- **Condition** : Datos erróneos.
+- **Condition** : Invalid data.
 
 - **Code** : `400 Bad Request`
 
@@ -449,7 +448,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 }
 ```
 
-### Crear proyecto :
+### Add project :
 
 
 - **URL** : `/users/create-project`
@@ -480,7 +479,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Success Responses_
 
 
-- **Condition** : Proyecto registrado con éxito.
+- **Condition** : Successfully registered project.
 
 - **Code** : `201 Created`
 
@@ -498,7 +497,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Error Responses_
 
 
-- **Condition** : Error al acceder a base de datos.
+- **Condition** : Error accessing database.
 
 - **Code** : `500 Internal Server Error`
 
@@ -507,7 +506,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 #### OR
 
-- **Condition** : Datos inválidos.
+- **Condition** : Invalid data.
 
 - **Code** : `400 Bad Request`
 
@@ -521,7 +520,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 
 &nbsp;
-### Recoger proyectos de un ususario:
+### Get user projects:
 
 
 - **URL** : `/users/projects`
@@ -540,7 +539,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Success Responses_
 
 
-- **Condition** : Existen proyectos del usuario.
+- **Condition** : User projects exist and are accessible.
 
 - **Code** : `200 Ok`
 
@@ -572,7 +571,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Error Responses_
 
 
-- **Condition** : Error al acceder a base de datos.
+- **Condition** : Error accessing database.
 
 - **Code** : `500 Internal Server Error`
 
@@ -580,7 +579,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 
 &nbsp;
-### Editar proyecto :
+### Update project :
 
 
 - **URL** : `/users/project/:id`
@@ -611,7 +610,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Success Responses_
 
 
-- **Condition** : Proyecto editado con éxito.
+- **Condition** : Successfully edited project.
 
 - **Code** : `202 Ok`
 
@@ -632,7 +631,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Error Responses_
 
 
-- **Condition** : Error al acceder a la base de datos.
+- **Condition** : Error accessing database.
 
 - **Code** : `500 Internal Server Error`
 
@@ -641,7 +640,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 #### OR
 
-- **Condition** : Datos erroneos.
+- **Condition** : DInvalid data.
 
 - **Code** : `400 Bad Request`
 
@@ -654,7 +653,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 ```
 
 &nbsp;
-### Borrar proyecto :
+### Delete project :
 
 
 - **URL** : `/users/projects/:id`
@@ -673,7 +672,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Success Responses_
 
 
-- **Condition** : El proyecto existe y es accesible.
+- **Condition** : The project exists and is accessible.
 
 - **Code** : `200 Ok`
 
@@ -682,7 +681,7 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 #### _Error Responses_
 
 
-- **Condition** : Error al acceder a la base de datos.
+- **Condition** : Error accessing database.
 
 - **Code** : `500 Internal Server Error`
 
@@ -690,14 +689,14 @@ Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Expre
 
 #### OR
 
-- **Condition** : The book with the given id does not exist.
+- **Condition** : The project with the given id does not exist.
 
 - **Code** : `404 Not found`
 
 - **Content** : `{"error": "Project not found"}`
 
 
-### Desarrollada con:
+### Build with:
 
 * [Node.js](https://nodejs.org/)
 * [Express.js](https://expressjs.com/)
