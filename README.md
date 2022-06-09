@@ -8,7 +8,7 @@
   <h1 align="center">NUWE BASIC PROFILE</h1>
 
   <p align="left">
-    Aplicación web desarrolldada para challenge de nuwe.io consistente en perfil de usuario. Donde se encuentran datos personales, datos laborales y puntuación en retos.
+    Aplicación web desarrolldada para challenge de <a href="https://nuwe.io">nuwe.io</a>
     <br />
     <br />
     <a href="https://nuweprofile.davidfdzmorilla.dev">Ver Demo</a>
@@ -19,15 +19,14 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre el proyecto
 
-Tiene api y app
+Nuwe Basic Profile ha sido desarrollada con una API REST, desarrollada con Express/Node.js y MySQL, y una App desarrollada con React
 
 
-API
-
+## API RES
 
 ## User endpoints
 
-* [Registrar un usuario](#create-a-user) : `POST /users/register`
+* [Registrar un usuario](#create-user) : `POST /users/register`
 * [Login](#login) : `POST /users/login`
 * [Recoge usuario](#get-user) : `GET /users/profile`
 * [Edita usuario](#edit-user) : `PATCH /users/`
@@ -697,18 +696,13 @@ API
 
 - **Content** : `{"error": "Project not found"}`
 
-Endpoints, estructura api y ejemplos req y res
-
-
-App
-
-Estructura carpetas, apis consumidas
-
 
 ### Desarrollada con:
 
 * [Node.js](https://nodejs.org/)
 * [Express.js](https://expressjs.com/)
+* [React.js](https://react.js.org/)
+* [MySQL](https://mysql.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
