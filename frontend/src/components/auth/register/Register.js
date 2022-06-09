@@ -26,8 +26,17 @@ export const Register = ({ setAction, setRegisterOk }) => {
   const [errorText, setErrorText] = useState('')
 
   const handleSubmit = async e => {
+
     e.preventDefault()
-    const { name, email, password, tel, professionType, professionLevel, country, city, ubication, typeCompany, minSalary, likeSalary } = form
+    const { name, email, password, repeatPassword, tel, professionType, professionLevel, country, city, ubication, typeCompany, minSalary, likeSalary } = form
+
+    if (repeatPassword !== password) {
+      setErrorType('password')
+      setErrorText('Las passwords no coinciden.')
+      return
+    } else {
+      delete form['repeatPassword']
+    }
 
     const { errorTypeValidation, errorTextValidation } = validateData(name, email, tel, professionType, professionLevel, country, city, ubication, typeCompany, minSalary, likeSalary)
     if (!email || !password) {
@@ -77,12 +86,15 @@ export const Register = ({ setAction, setRegisterOk }) => {
       headerPic,
       [name]: value
     })
-
   }
 
   return (
-    <>
-      <h2>Introduce tus datos o con datos por defecto. Debes introducir email, contraseña y clickar en enviar con datos de test.</h2>
+    <main className='register-page'>
+      <h2>Tienes dos opciones para  registro:</h2>
+      <ol className='options-explanation'>
+        <li>Introducir todos los datos maunualmente.</li>
+        <li>Registrarse con datos de test. Si eliges esta opción debes introducir email, password y clicar el el botón enviar con datos de test.</li>
+      </ol>
       <form onSubmit={handleSubmit} className='register-form'>
         <section className='inputs-container'>
           <fieldset>
@@ -93,6 +105,11 @@ export const Register = ({ setAction, setRegisterOk }) => {
           <fieldset>
             <legend>Password</legend>
             <input minLength={6} maxLength={20} onChange={handleChange} type='password' name='password' placeholder='Introduce password...' required />
+            {errorType === 'password' && <p className='error-text'>{errorText}</p>}
+          </fieldset>
+          <fieldset>
+            <legend>Repite password</legend>
+            <input minLength={6} maxLength={20} onChange={handleChange} type='password' name='repeatPassword' placeholder='Repite password...' required />
           </fieldset>
           <fieldset>
             <legend>Url avatar</legend>
@@ -190,6 +207,6 @@ export const Register = ({ setAction, setRegisterOk }) => {
       {errorText &&
         <p style={{ color: 'red', fontSize: '1.5rem' }}>{errorText}</p>
       }
-    </>
+    </main>
   )
 }
