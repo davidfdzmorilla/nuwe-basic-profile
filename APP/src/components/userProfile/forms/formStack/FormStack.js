@@ -26,7 +26,7 @@ export const FormStack = ({ hardSkills, reload, setReload }) => {
   const handleChange = ({ target }) => {
     const { value } = target
     setSearchRes(skillsItemsDefect.filter((skill) => {
-      return skill.toLowerCase().includes(value)
+      return skill.toLowerCase().includes(value.toLocaleLowerCase())
     }))
   }
 
