@@ -11,7 +11,7 @@
     Web application developed for the challenge of <a href="https://nuwe.io">nuwe.io</a>
     <br />
     <br />
-    <a href="https://nuweprofile.davidfdzmorilla.dev">Ver Demo</a>
+    <a href="https://nuweprofile.davidfdzmorilla.dev">View Demo</a>
   </p>
 </div>
 
