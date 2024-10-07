@@ -19,6 +19,7 @@ export const Register = ({ setAction, setRegisterOk }) => {
   const userTestData = userTest[0]
 
   const [form, setForm] = useState(userTestData)
+  console.log(form)
   const [availabilityToTravelSwitch, setAvailabilityToTravelSwitch] = useState(false)
   const [remoteWorkSwitch, setRemoteWorkSwitch] = useState(false)
   const [inmediateIncorporationSwitch, setInmediateIncorporationSwitch] = useState(false)
