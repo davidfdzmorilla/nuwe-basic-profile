@@ -17,7 +17,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## Sobre el proyecto
+## About the project
 
 Nuwe Basic Profile has been developed with a REST API, developed with Express/Node.js and MySQL, and an App developed with React.
 
